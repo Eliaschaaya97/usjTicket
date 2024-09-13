@@ -1,0 +1,305 @@
+.Usjticket {
+	.container-fluid {
+	  padding-left: 3% !important;
+	  padding-right: 3% !important;
+	}
+	.top-section-usj-ticket {
+	  .banner_section {
+	    background-image: url("/assets/images/usjticket/backgroundtopsection.png");
+	    height: 1230px;
+	    background-position: center;
+	  }
+      
+	  .banner_section .information-usj .top {
+	    display: flex;
+	    justify-content: space-between;
+	    width: 100%;
+	    object-fit: contain;
+	    .row-hot-reser {
+	      display: flex;
+	      justify-content: end;
+	    }
+	    .hotline-reserve {
+	      justify-content: flex-end;
+	      .d-flex {
+		.text-phone {
+		  font-size: 16px;
+		  font-family: $AvenirHeavy;
+		  color: #ffffff;
+		  white-space: nowrap;
+		}
+		.reservervosplace {
+		  background-color: white;
+		  padding: 15px 20px;
+		  border-radius: 30px;
+		  font-family: $Bold;
+		  font-size: 19px;
+		  white-space: nowrap;
+		}
+	      }
+	    }
+	    .top-mid {
+	      .frameback {
+		margin-left: -25%;
+	      }
+	      .AVAVenueAchrafieh {
+		border-radius: 20px;
+      
+		background-image: url("/assets/images/usjticket/AVAVenueAchrafieh.png");
+		background-position: center;
+      
+		height: 650px;
+		.text-overlay {
+		  position: relative;
+		  top: 70%;
+		  left: 10%;
+		  color: white;
+		  font-size: 24px;
+		  .left {
+		    background-color: #fff;
+		    width: 125px;
+		    height: 125px;
+		    text-align: center;
+		    padding: 10px;
+		    border-radius: 20px;
+		    p {
+		      color: black;
+		      font-family: $Medium;
+		    }
+		  }
+		}
+		.right {
+		  display: flex;
+		  margin-left: 10px;
+		  p {
+		    font-family: $Medium;
+		  }
+		}
+	      }
+	      .FrameBackground {
+		border-radius: 20px;
+		background-image: url("/assets/images/usjticket/FrameBackground.png");
+		background-position: center;
+		height: 550px;
+		margin-top: 50px;
+		margin-left: -50px;
+		.box {
+		  padding: 10px;
+		  .top {
+		    margin-top: 5%;
+		    font-size: 18px;
+		    font-family: $Bold;
+		    color: #fcfcfc;
+		  }
+		  .title {
+		    margin-top: 5%;
+		    font-size: 48px;
+		    font-family: $AvenirMedium;
+		    color: #fcfcfc;
+		  }
+		  .sub {
+		    margin-top: 5%;
+		    font-size: 18px;
+		    font-family: $Medium;
+		    color: #fcfcfc;
+		  }
+		  .btn-reserv {
+		    text-align: center;
+		    margin-top: 8%;
+		    button {
+		      text-align: center;
+		      background-color: white;
+		      padding: 15px 20px;
+		      border-radius: 30px;
+		      font-family: $Bold;
+		      font-size: 19px;
+		      white-space: nowrap;
+		      border: none;
+		    }
+		  }
+		}
+	      }
+	    }
+	  }
+	}
+	@media screen and (max-width: 992px) {
+	  .information-usj {
+	    text-align: center;
+	    .hotline-reserve {
+	      margin-top: 50px !important;
+	      justify-content: unset !important;
+	      .reservervosplace {
+		padding: 10px !important;
+	      }
+	      .row-hot-reser {
+		display: flex;
+		justify-content: unset !important;
+	      }
+	    }
+	    .top-mid {
+	      .FrameBackground{
+		  margin-top: 50px !important;
+		margin-left: 0% !important;
+		min-height: 200px;
+		height: 380px !important;
+		.box {
+		  .top {
+		    margin-top: 5%;
+		    font-size: 16px !important;
+		  }
+		  .title {
+		    margin-top: 5%;
+		    font-size: 28px !important;
+		  }
+		  .sub {
+		    margin-top: 5%;
+		    font-size: 16px !important;
+		  }
+		  .btn-reserv {
+		    margin-top: 5% !important;
+		    button {
+		      padding: 10px 15px !important;
+		      font-size: 17px !important;
+		    }
+		  }
+		}
+	      }
+	      .AVAVenueAchrafieh {
+		height: 430px !important;
+		min-height: 200px;
+		.text-overlay {
+		  .left {
+		    width: 100px !important;
+		    height: 100px !important;
+		    p {
+		      font-size: 19px;
+		    }
+		  }
+		}
+	      }
+	    }
+	  }
+	}
+	@media screen and (max-width: 767px) {
+	  .information-usj {
+	    text-align: center;
+	    .hotline-reserve {
+	      margin-top: 50px !important;
+	      .row-hot-reser {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 50px;
+		justify-content: center !important;
+	      }
+	    }
+	    .top-mid {
+	      .frameback {
+		margin-left: 0% !important;
+	      }
+	    }
+	  }
+	}
+	@media screen and (max-width: 560px) {
+	  .information-usj {
+	      .top-mid {
+		  .FrameBackground{
+		    margin-left: 0% !important;
+		    min-height: 200px;
+		    height: 350px !important;
+		    margin-top: 50px !important;
+		    .box {
+		      .top {
+			margin-top: 5%;
+			font-size: 15px !important;
+		      }
+		      .title {
+			margin-top: 5%;
+			font-size: 22px !important;
+		      }
+		      .sub {
+			margin-top: 5%;
+			font-size: 15px !important;
+		      }
+		      .btn-reserv {
+			margin-top: 5% !important;
+			button {
+			  padding: 10px 15px !important;
+			  font-size: 16px !important;
+			}
+		      }
+		    }
+		  }
+		  .AVAVenueAchrafieh {
+		    height: 350px !important;
+		    min-height: 150px;
+		    .text-overlay {
+		      left: 3% !important; 
+		      .left {
+			width: 80px !important;
+			height: 80px !important;
+			p {
+			  font-size: 15px !important;
+			}
+		      }
+		      .right {
+			  margin-left: 5px !important;
+			  p {
+			   font-size: 12px !important;
+			  }
+		       
+			}
+		    }
+		  }
+		}
+	  }
+	}
+
+	.solution-common {
+		min-height: 80vh;
+		background-repeat: no-repeat;
+		background-position: center;
+		padding: 6rem;
+	
+		.reserveyourplace {
+			border-radius: 16px;
+			background-color: rgb(217 255 253 / 62%);
+			padding: 3rem;
+			display: flex;
+			flex-direction: column;
+			margin: auto;
+			    max-width: 906px;
+			.pricetotalquantity{
+				display: flex;
+				justify-content: space-between;
+				max-width: 50%;
+	
+				#usj_ticket_amount {
+					width: 22%;
+				}
+	
+				.pricetotalquantityinput {
+					display: flex;
+					flex-direction: column;
+	
+					#usj_ticket_email input{
+						width: 65% !important;
+					}
+					#usj_ticket_phoneNumber input{
+						width: 65% !important;
+					}
+				}
+			}
+		}
+		.pricetotalquantityform{
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+	
+			.formamount{
+				width: 30%;
+			}
+		}
+	}
+}
+
+      

@@ -1,0 +1,118 @@
+<div class="navbar navbar-expand-lg navbar_v2">
+<a class="navbar-brand" href="/">{% if greyBack is defined %} <img src="{{ asset('build/images/suyoolPaymentLogo.png') }}" alt="Suyool"> {% else %}<img src="{{ asset('build/images/suyool-Logo.svg') }}" alt="Suyool"> {% endif %} </a>
+    <a class="navbar-brand-blue" style="display: none" href="/"><img src="{{ asset('build/images/suyoolPaymentLogo.png') }}"
+                                                                     alt="Suyool"></a>
+
+    <!-- Desktop Navbar Menu -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+        {% if matBank is not defined and titleHead is not defined %}
+        <ul class="navbar-nav ms-5">
+            <li class="nav-item">
+        <a class="nav-link personal-underline {% if greyBack is defined %} personal-underline-grey {% endif %}" href="https://suyool.com/">Personal</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link business-underline {% if greyBack is defined %} business-underline-grey {% endif %}" href="https://suyool.com/corporate-terms">Business</a>
+            </li>
+        </ul>
+        {% endif %}
+        {% if visa is not defined %}
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    {% if corporateBTn is defined and corporateBTn is not empty %}
+                        <button id="openSuyoolAccount" type="button" class="btn button-primary"
+                                onclick="window.location.href='/legal_enrollment'">{{ corporateBTn }}</button>
+                    {% endif %}
+                </li>
+            </ul>
+        {% endif %}
+    </div>
+{# 
+       visa or homepage #}
+    {% if visa is defined or homepage is defined %}
+        <ul class="navbar-nav ms-auto justify-content-end me-4">
+            <li class="nav-item">
+                <div class="calluson py-2">
+                    <div>
+                        <div class="desktopMode" {% if greyBack is defined %} style="color: #216D96;" {% endif %}>Available 24/7 on our hotline:<span><a href="tel:+9611290900"><img
+                                            src="{{ asset('build/images/mobile.svg') }}"/> 01 290 900</a></span></div>
+                        <div class="tabletmobileMode"><span><a href="tel:+9611290900"><img
+                                            src="{{ asset('build/images/mobile.svg') }}"/>01 290 900</a></span></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    {% endif %}
+
+    {% if visa is not defined %}
+        <!-- Mobile Toggle Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNavbar"
+                aria-controls="mobileNavbar">
+        <span class="navbar-toggler-icon">
+            <div class="burger-menu">
+                <div ></div>
+                <div ></div>
+                <div ></div>
+            </div>
+        </span>
+        </button>
+    {% endif %}
+
+
+    <!-- Mobile Navigation Drawer -->
+<!-- Offcanvas menu -->
+<div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="mobileNavbar" aria-labelledby="mobileNavbarLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="mobileNavbarLabel">
+            <img src="{{ asset('build/images/suyool-Logo.svg') }}" alt="Suyool Logo">
+        </h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="navbar-nav">
+            <li class="nav-item head">
+                <a class="nav-link" href="#">PERSONAL</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://suyool.com/visaCard">Visa Platinum Card</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://suyool.com/personal-terms">Terms & Conditions</a>
+            </li>
+
+            <li class="nav-item head">
+                <a class="nav-link" href="#">BUSINESS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://suyool.com/digital-corporate-account">Corporate Account</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://suyool.com/omnichannel">Merchant Account</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://suyool.com/personal-terms">Terms & Conditions</a>
+            </li>
+
+            <li class="nav-item head">
+                <a class="nav-link" href="#">SUYOOL</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://suyool.com/contact-us">Contact Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://suyool.com/privacy_policy">Privacy & Policy</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://suyool.com/privacy_policy">Help Center</a>
+            </li>
+
+            <li class="nav-item nav-btn-cont">
+                <button type="button" class="btn button-primary open-suyool-account">Open Suyool Account</button>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</div>

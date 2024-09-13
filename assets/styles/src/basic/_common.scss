@@ -1,0 +1,334 @@
+* {
+  margin: 0;
+}
+
+// .information{
+//   .OpenSuyoolAccount{
+//     margin-top: 125px;
+//     @media screen and (max-width:768px) {
+//       margin-top: 40px;
+//     }
+//   }
+// } //mawjoude b medco-payroll.scss
+
+.offcanvas-header {
+  padding: 0;
+}
+
+.offcanvas-body {
+  padding: 0;
+
+  .nav-link {
+    color: #fff !important;
+    padding: 8px 0;
+  }
+  .head {
+    padding : 15px 0 10px 0 !important;
+  }
+}
+
+.ar {
+  text-align: right;
+  direction: rtl;
+  letter-spacing: 0px !important;
+}
+
+body {
+  background-color: hsl(0deg 5.57% 71.65% / 9%);
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+@media(min-width: 768px) {
+  a:hover {
+    text-decoration: none;
+    color: unset;
+  }
+}
+
+.button-primary {
+  background-color: #226d96;
+  padding: 8px 80px;
+  color: white;
+  border-radius: 30px;
+
+  @media(min-width: 768px) {
+    &:hover {
+      background-color: #226d96;
+    }
+  }
+}
+
+.displayNone {
+  display: none;
+}
+
+.container-fluid {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+.learnmore {
+  background: #226d96;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  display: inline-flex;
+  font-family: $Medium;
+  margin-top: 50px;
+  padding: 15px 30px;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.right {
+  text-align: right;
+}
+
+.logoTryagain {
+  text-align: center;
+  position: relative;
+  top: 100px;
+}
+
+.tryagain {
+  padding-top: 32vh;
+  text-align: center;
+
+  h2 {
+    color: #3f6e98;
+  }
+
+  .close {
+    border: none;
+    padding: 13px 57px;
+    margin-top: 32px;
+    background-color: #246299;
+    color: #ffffff;
+    border-radius: 10px;
+  }
+}
+
+
+.tabletMode {
+  display: none;
+}
+
+.tabletmobileMode {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .mobileMode {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) and (min-width: 767px) {
+  .desktopMode {
+    display: none;
+  }
+
+  .tabletMode {
+    display: block;
+  }
+
+  .tabletmobileMode {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  img {
+    max-width: 100%;
+  }
+
+
+  .desktopMode {
+    display: none !important;
+  }
+
+  .tabletMode {
+    display: none;
+  }
+
+  .tabletmobileMode {
+    display: block;
+  }
+}
+
+#language_selection {
+  height: 120px;
+  z-index: 1000;
+  position: absolute;
+  width: 150px;
+  right: 60px;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  direction: ltr;
+
+  .lang_sec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    font-family: $SemiBold;
+    color: #216d96;
+    border: 1px solid #216d96;
+    background-color: white;
+    text-align: center;
+    border-radius: 5px;
+  }
+
+  .lang_sec_selected {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    font-family: $SemiBold;
+    color: white;
+    border: 1px solid #216d96;
+    background-color: #216d96;
+    text-align: center;
+    border-radius: 5px;
+  }
+}
+
+.getTheApp {
+  text-align: center;
+
+  .title {
+    color: #226d96;
+    font-family: PoppinsMedium;
+    font-size: 22px;
+    margin-bottom: 30px;
+    // margin-top: 130px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .desc {
+    color: #374a5a;
+    font-family: PoppinsSemiBold;
+    font-size: 35px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .qr {
+    padding-bottom: 32px;
+
+    img {
+      width: 11%;
+    }
+  }
+
+  .download {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 70px;
+
+    img {
+      width: 90%;
+      padding: 30px;
+    }
+  }
+}
+
+.bg-white {
+  background: #fff !important;
+}
+
+.bg-blue {
+  background: #226d96 !important;
+}
+
+@media (max-width: 768px) {
+  #language_selection {
+    display: none;
+  }
+
+  #language-dropdown {
+    z-index: 1000;
+    position: absolute;
+    right: 40px;
+    top: 45px;
+    width: 64px;
+
+    select {
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      width: 70px;
+      height: 30px;
+      padding-left: 7px;
+      color: white;
+      font-family: $Regular;
+      background-color: #226d96;
+
+      &:focus {
+        background-color: #fff;
+        color: #226d96;
+        border: 1px solid #226d96;
+      }
+    }
+  }
+}
+
+.open-suyool-account, #openSuyoolAccount {
+  width: 250px;
+  padding: 10px 0;
+  border-radius: 30px !important;
+  border: none;
+  background-image: linear-gradient(to left, 
+    #4D4778,   
+    #485D89,  
+    #45628D,  
+    #3C739B   
+);
+
+}
+
+@media(min-width: 769px){
+  #openSuyoolAccount:hover {
+    background-color: #226d96;
+    color: #fff;
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 768px) {
+  .open-suyool-account, #openSuyoolAccount {
+    width: 90%;
+    margin: auto;
+    padding: 15px 0;
+    max-width: 250px;
+  }
+  .douaihyBoisTopSection {
+    .mobileMode {
+      .OpenYourSuyoolAccount {
+        color: #ffff !important;
+        background: #226d96!important;
+      }
+    }
+  }
+}
+.img-compliant {
+  width: 100px;
+  img {
+    width: 100%;
+    height: unset!important;
+  }
+}

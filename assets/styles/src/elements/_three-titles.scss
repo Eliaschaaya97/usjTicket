@@ -1,0 +1,58 @@
+.three-titles {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.three-titles-1 {
+  margin-top: 20px;
+}
+
+.title-one {
+  color: #3C739B !important;
+  font-size: 53px;
+  font-family: $Regular;
+  letter-spacing: 2px;
+}
+
+.title-two {
+  color: #202020;
+  font-size: 35px;
+  font-family: $Regular;
+  margin-top: 25px;
+}
+
+.title-three {
+  color: $grey;
+  font-size: 18px;
+  //font-family: "OpenSansRegular";
+  font-family: $InterRegular;
+  max-width: 60%;
+  margin: 25px auto 50px auto;
+}
+
+.shadda-cont{
+  display: flex;
+  justify-content: center;
+
+  .shadda, .kasra {
+    position: relative;
+    font-weight: 600;
+  }
+  .shadda {
+    top: -3px;
+    right: 35px;
+  }
+
+  .kasra {
+    top: -26px;
+    right: 34px;
+  }
+}
+
+@media (max-width: 768px) {
+    .title-three {
+       max-width: 95%;
+    }
+}
+
+

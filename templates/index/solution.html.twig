@@ -1,0 +1,86 @@
+{% block body %}
+<div class="solution-common  use-money-common" id='reserveyourplace' style="background-image: url('{{ asset('build/images/usjticket/usjbluebackground2.png') }}');">
+	
+
+		<div class='reserveyourplace'>
+			<h1>
+				Reservez vos places
+			</h1>
+			<p>
+				au profit des bourses aux etudiants</p>
+
+			{{form_start(form)}}
+			<div class='pricetotalquantity'>
+				<div class='pricetotalquantityinput'>
+
+					<p>PRIX TOTAL</p>
+					<p id="total-price">$250</p>
+				</div>
+				<div class='pricetotalquantityinput'>
+
+					<p>QUANTITEE</p>
+					{{ form_widget(form.amount, {'attr': {'class': 'formamount'}}) }}
+				</div>
+			</div>
+
+			<div class='pricetotalquantityinput'>
+
+				<p>Email</p>
+				{{ form_widget(form.email, {'attr': {'class': 'formemail'}}) }}
+			</div>
+
+			<div class='pricetotalquantityinput'>
+
+				<p>Phone Number</p>
+				{{ form_widget(form.phoneNumber, {'attr': {'class': 'formphoneNumber'}}) }}
+			</div>
+
+			<button type="submit" id="submit-button" disabled>Reservez Vos Places</button>
+			{% if errordescription is not empty %}
+				<p>{{ errordescription }}</p>
+			{% endif %}
+			{{form_end(form)}}
+
+		</div>
+
+
+	
+</div>
+
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const amountInput = document.getElementById('usj_ticket_amount');
+		const emailInput = document.getElementById('usj_ticket_email');
+		const phoneInput = document.getElementById('usj_ticket_phoneNumber');
+		const submitButton = document.getElementById('submit-button');
+		const totalPriceElement = document.getElementById('total-price');
+		const pricePerUnit = 250;
+	    
+		function updatePrice() {
+		    const amount = parseInt(amountInput.value, 10) || 1;
+		    const totalPrice = amount * pricePerUnit;
+		    totalPriceElement.textContent = `$${totalPrice}`;
+		}
+	    
+		function validateForm() {
+		    const isEmailFilled = emailInput.value.trim() !== '';
+		    const isPhoneFilled = phoneInput.value.trim() !== '';
+	    
+		    submitButton.disabled = !(isEmailFilled && isPhoneFilled);
+		}
+	    
+		amountInput.addEventListener('input', function () {
+		    updatePrice();
+		    validateForm();
+		});
+	    
+		emailInput.addEventListener('input', validateForm);
+		phoneInput.addEventListener('input', validateForm);
+	    
+		updatePrice();
+		validateForm();
+	    });
+	    
+</script>
+{% endblock %}

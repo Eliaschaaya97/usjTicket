@@ -1,0 +1,58 @@
+$Bold: PoppinsBold;
+$Medium: PoppinsMedium;
+$Regular: PoppinsRegular;
+$SemiBold: PoppinsSemiBold;
+$Italic: PoppinsItalic;
+$AvenirMedium:AvenirMedium;
+$AvenirHeavy:AvenirHeavy;
+
+
+$grey: rgb(69, 72, 69);
+
+$InterRegular: InterRegular;
+$InterBold: InterBold;
+
+@font-face {
+    font-family: PoppinsBold;
+    src: url('../../../fonts/Poppins-Bold.ttf');
+}
+@font-face {
+    font-family: AvenirMedium;
+    src: url('../../../fonts/Avenir-Medium.ttf');
+}
+@font-face {
+    font-family: AvenirHeavy;
+    src: url('../../../fonts/Avenir-Heavy.ttf');
+}
+@font-face {
+    font-family: PoppinsMedium;
+    src: url('../../../fonts/Poppins-Medium.ttf');
+}
+@font-face {
+    font-family: PoppinsRegular;
+    src: url('../../../fonts/Poppins-Regular.ttf');
+}
+@font-face {
+    font-family: PoppinsSemiBold;
+    src: url('../../../fonts/Poppins-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: OpenSansRegular;
+    src: url('../../../fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: PoppinsItalic;
+    src: url('../../../fonts/Poppins-Italic.ttf');
+}
+
+@font-face {
+    font-family: InterRegular;
+    src: url('../../../fonts/Inter-Regular.ttf');
+}
+
+@font-face {
+    font-family: InterBold;
+    src: url('../../../fonts/Inter-Bold.ttf');
+}
