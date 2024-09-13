@@ -5,8 +5,10 @@ $SemiBold: PoppinsSemiBold;
 $Italic: PoppinsItalic;
 $AvenirMedium:AvenirMedium;
 $AvenirHeavy:AvenirHeavy;
-
-
+$AvenirOblique:AvenirOblique;
+$AvenirBook:AvenirBook;
+$MontserratSemiBold:MontserratSemiBold;
+$AvenirBlack:AvenirBlack;
 $grey: rgb(69, 72, 69);
 
 $InterRegular: InterRegular;
@@ -17,12 +19,28 @@ $InterBold: InterBold;
     src: url('../../../fonts/Poppins-Bold.ttf');
 }
 @font-face {
+    font-family: MontserratSemiBold;
+    src: url('../../../fonts/Montserrat-SemiBold.ttf');
+}
+@font-face {
+    font-family: AvenirBook;
+    src: url('../../../fonts/Avenir-Book.ttf');
+}
+@font-face {
     font-family: AvenirMedium;
     src: url('../../../fonts/Avenir-Medium.ttf');
 }
 @font-face {
     font-family: AvenirHeavy;
     src: url('../../../fonts/Avenir-Heavy.ttf');
+}
+@font-face {
+    font-family: AvenirBlack;
+    src: url('../../../fonts/Avenir-Black.ttf');
+}
+@font-face {
+    font-family: AvenirOblique;
+    src: url('../../../fonts/Avenir-Oblique.ttf');
 }
 @font-face {
     font-family: PoppinsMedium;

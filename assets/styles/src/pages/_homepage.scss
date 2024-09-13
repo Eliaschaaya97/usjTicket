@@ -1,305 +1,545 @@
 .Usjticket {
-	.container-fluid {
-	  padding-left: 3% !important;
-	  padding-right: 3% !important;
-	}
-	.top-section-usj-ticket {
-	  .banner_section {
-	    background-image: url("/assets/images/usjticket/backgroundtopsection.png");
-	    height: 1230px;
-	    background-position: center;
-	  }
-      
-	  .banner_section .information-usj .top {
-	    display: flex;
-	    justify-content: space-between;
-	    width: 100%;
-	    object-fit: contain;
-	    .row-hot-reser {
-	      display: flex;
-	      justify-content: end;
-	    }
-	    .hotline-reserve {
-	      justify-content: flex-end;
-	      .d-flex {
-		.text-phone {
-		  font-size: 16px;
-		  font-family: $AvenirHeavy;
-		  color: #ffffff;
-		  white-space: nowrap;
-		}
-		.reservervosplace {
-		  background-color: white;
-		  padding: 15px 20px;
-		  border-radius: 30px;
-		  font-family: $Bold;
-		  font-size: 19px;
-		  white-space: nowrap;
-		}
-	      }
-	    }
-	    .top-mid {
-	      .frameback {
-		margin-left: -25%;
-	      }
-	      .AVAVenueAchrafieh {
-		border-radius: 20px;
-      
-		background-image: url("/assets/images/usjticket/AVAVenueAchrafieh.png");
-		background-position: center;
-      
-		height: 650px;
-		.text-overlay {
-		  position: relative;
-		  top: 70%;
-		  left: 10%;
-		  color: white;
-		  font-size: 24px;
-		  .left {
-		    background-color: #fff;
-		    width: 125px;
-		    height: 125px;
-		    text-align: center;
-		    padding: 10px;
-		    border-radius: 20px;
-		    p {
-		      color: black;
-		      font-family: $Medium;
-		    }
-		  }
-		}
-		.right {
-		  display: flex;
-		  margin-left: 10px;
-		  p {
-		    font-family: $Medium;
-		  }
-		}
-	      }
-	      .FrameBackground {
-		border-radius: 20px;
-		background-image: url("/assets/images/usjticket/FrameBackground.png");
-		background-position: center;
-		height: 550px;
-		margin-top: 50px;
-		margin-left: -50px;
-		.box {
-		  padding: 10px;
-		  .top {
-		    margin-top: 5%;
-		    font-size: 18px;
-		    font-family: $Bold;
-		    color: #fcfcfc;
-		  }
-		  .title {
-		    margin-top: 5%;
-		    font-size: 48px;
-		    font-family: $AvenirMedium;
-		    color: #fcfcfc;
-		  }
-		  .sub {
-		    margin-top: 5%;
-		    font-size: 18px;
-		    font-family: $Medium;
-		    color: #fcfcfc;
-		  }
-		  .btn-reserv {
-		    text-align: center;
-		    margin-top: 8%;
-		    button {
-		      text-align: center;
-		      background-color: white;
-		      padding: 15px 20px;
-		      border-radius: 30px;
-		      font-family: $Bold;
-		      font-size: 19px;
-		      white-space: nowrap;
-		      border: none;
-		    }
-		  }
-		}
-	      }
-	    }
-	  }
-	}
-	@media screen and (max-width: 992px) {
-	  .information-usj {
-	    text-align: center;
-	    .hotline-reserve {
-	      margin-top: 50px !important;
-	      justify-content: unset !important;
-	      .reservervosplace {
-		padding: 10px !important;
-	      }
-	      .row-hot-reser {
+
+
+  .top-section-usj-ticket {
+    .banner_section {
+      background-image: url("/assets/images/usjticket/bluesky.png");
+      background-position: center;
+	  padding-bottom: 200px;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+    }
+
+  .information-usj .top {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      object-fit: contain;
+	  padding-left: 15px;
+
+      .row-hot-reser {
+        display: flex;
+        justify-content: end;
+      }
+
+      .hotline-reserve {
+        justify-content: flex-end;
+
+        .d-flex {
+          .text-phone {
+            font-size: 16px;
+            font-family: $AvenirHeavy;
+            color: #ffffff;
+            white-space: nowrap;
+          }
+
+          .reservervosplace {
+            background-color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-family: $Bold;
+            font-size: 19px;
+            white-space: nowrap;
+			border: none;
+			margin-top: -17px;
+          }
+        }
+      }
+
+      .top-mid {
+		margin: auto;
 		display: flex;
-		justify-content: unset !important;
-	      }
-	    }
-	    .top-mid {
-	      .FrameBackground{
-		  margin-top: 50px !important;
-		margin-left: 0% !important;
-		min-height: 200px;
-		height: 380px !important;
-		.box {
-		  .top {
-		    margin-top: 5%;
-		    font-size: 16px !important;
-		  }
-		  .title {
-		    margin-top: 5%;
-		    font-size: 28px !important;
-		  }
-		  .sub {
-		    margin-top: 5%;
-		    font-size: 16px !important;
-		  }
-		  .btn-reserv {
-		    margin-top: 5% !important;
-		    button {
-		      padding: 10px 15px !important;
-		      font-size: 17px !important;
-		    }
-		  }
-		}
-	      }
-	      .AVAVenueAchrafieh {
-		height: 430px !important;
-		min-height: 200px;
-		.text-overlay {
-		  .left {
-		    width: 100px !important;
-		    height: 100px !important;
-		    p {
-		      font-size: 19px;
-		    }
-		  }
-		}
-	      }
-	    }
+		justify-content: center;
+        .frameback {
+          margin-left: -25%;
+        }
+
+        .AVAVenueAchrafieh {
+          border-radius: 20px;
+
+          background-image: url("/assets/images/usjticket/AVAVenueAchrafieh.png");
+          background-position: center;
+
+          height: 650px;
+
+          .text-overlay {
+            position: relative;
+            top: 70%;
+            left: 10%;
+            color: white;
+            font-size: 24px;
+
+            .left {
+              background-color: #fff;
+              width: 125px;
+              height: 125px;
+              text-align: center;
+              padding: 10px;
+              border-radius: 20px;
+
+              p {
+                color: black;
+                font-family: $Medium;
+              }
+            }
+          }
+
+          .right {
+            display: flex;
+            margin-left: 10px;
+
+            p {
+              font-family: $Medium;
+            }
+          }
+        }
+
+        .FrameBackground {
+          border-radius: 20px;
+          background-image: url("/assets/images/usjticket/FrameBackground.png");
+          background-position: center;
+          height: 550px;
+          margin-top: 50px;
+          margin-left: -50px;
+
+          .box {
+            padding: 10px;
+
+            .top {
+              margin-top: 5%;
+              font-size: 18px;
+              font-family: $Bold;
+              color: #fcfcfc;
+            }
+
+            .title {
+              margin-top: 5%;
+              font-size: 48px;
+              font-family: $AvenirMedium;
+              color: #fcfcfc;
+            }
+
+            .sub {
+              margin-top: 5%;
+              font-size: 18px;
+              font-family: $Medium;
+              color: #fcfcfc;
+            }
+
+            .btn-reserv {
+              text-align: center;
+              margin-top: 8%;
+
+              button {
+                text-align: center;
+                background-color: white;
+                padding: 15px 20px;
+                border-radius: 30px;
+                font-family: $Bold;
+                font-size: 19px;
+                white-space: nowrap;
+                border: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .top-body {
+      width: 100%;
+      height: 400px;
+      background-color: #8e959d;
+      border: 1px solid #707070;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .box-body-top {
+        display: flex;
+        flex-direction: row;
+        /* For larger screens, row layout */
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        .logo-img {
+          text-align: center;
+          margin: auto;
+
+          img {
+            max-width: 100%;
+            /* Ensures the logo is responsive */
+          }
+        }
+
+        .text {
+          text-align: left;
+          color: #ffffff;
+
+          .title {
+            font-family: $Bold;
+            font-size: 18px;
+          }
+
+          .sub-title {
+            font-size: 40px;
+            font-family: $AvenirOblique;
+          }
+        }
+      }
+    }
+  }
+
+  .solution-common {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 6rem;
+    box-sizing: border-box;
+
+    .reserveyourplace {
+      border-radius: 16px;
+      background-color: rgba(217, 255, 253, 0.62);
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      max-width: 906px;
+	  .form-text{
+		width: 500px;
 	  }
-	}
-	@media screen and (max-width: 767px) {
-	  .information-usj {
-	    text-align: center;
-	    .hotline-reserve {
-	      margin-top: 50px !important;
-	      .row-hot-reser {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 50px;
-		justify-content: center !important;
-	      }
-	    }
-	    .top-mid {
-	      .frameback {
-		margin-left: 0% !important;
-	      }
-	    }
+      h1 {
+        font-family: $Bold;
+      }
+      p {
+        font-family: $Regular;
+      }
+
+      .pricetotalquantity {
+        display: flex;
+        justify-content: space-between;
+        max-width: 50%;
+        .title-price {
+          margin-right: 20px;
+          white-space: nowrap;
+          font-size: 17px;
+          font-family: $MontserratSemiBold;
+        }
+        .price {
+          background-color: #cfdde4;
+          padding: 15px 20px;
+          margin-right: 20px;
+          height: 55px;
+          border-radius: 7px;
+          width: 150px;
+		  font-size: 29px;
+		  color: black;
+		  padding-top: 7px;
+		  font-family: $AvenirBlack;
+        }
+        .title-quant {
+          font-size: 17px;
+          font-family: $MontserratSemiBold;
+        }
+        .quant {
+          background-color: #fff;
+          padding: 5px;
+          border: none;
+          height: 55px;
+          border-radius: 7px;
+          width: 80px;
+		  font-size: 29px;
+		  font-family: $AvenirBlack;
+
+        }
+        .title-email {
+          font-size: 16px;
+          font-family: $AvenirBook;
+        }
+        .email {
+          width: 300px;
+          border: none;
+          border-radius: 5px;
+          height: 64px;
+          padding: 5px;
+        }
+        .title-phone {
+          font-size: 16px;
+          font-family: $AvenirBook;
+        }
+        .phone {
+          text-wrap-style: 0;
+        }
+        #usj_ticket_amount {
+          text-align: center;
+          width: 100%;
+          border: none;
+		  color: #1196CA;
+		  
+        }
+      }
+      .pricetotalquantityinput {
+        display: flex;
+        flex-direction: column;
+
+        #usj_ticket_email,
+        #usj_ticket_phoneNumber {
+          width: 100% !important;
+          min-width: 50px;
+          border: none !important;
+          border-radius: 11px !important;
+          height: 64px !important;
+          padding: 5px 15px !important;
+          margin-top: -10px !important;
+        }
+      }
+	  .btn-submit{
+		width: 260px;
+		border: none;
+		text-align: center;
+		background-color: white;
+		padding: 15px 20px;
+		color: black;
+		font-family: $Bold;
+		font-size: 19px;
+		border-radius: 30px;
 	  }
-	}
-	@media screen and (max-width: 560px) {
-	  .information-usj {
-	      .top-mid {
-		  .FrameBackground{
-		    margin-left: 0% !important;
-		    min-height: 200px;
-		    height: 350px !important;
-		    margin-top: 50px !important;
-		    .box {
-		      .top {
-			margin-top: 5%;
-			font-size: 15px !important;
-		      }
-		      .title {
-			margin-top: 5%;
-			font-size: 22px !important;
-		      }
-		      .sub {
-			margin-top: 5%;
-			font-size: 15px !important;
-		      }
-		      .btn-reserv {
-			margin-top: 5% !important;
-			button {
-			  padding: 10px 15px !important;
-			  font-size: 16px !important;
-			}
-		      }
-		    }
-		  }
-		  .AVAVenueAchrafieh {
-		    height: 350px !important;
-		    min-height: 150px;
-		    .text-overlay {
-		      left: 3% !important; 
-		      .left {
-			width: 80px !important;
-			height: 80px !important;
-			p {
-			  font-size: 15px !important;
-			}
-		      }
-		      .right {
-			  margin-left: 5px !important;
-			  p {
-			   font-size: 12px !important;
+    }
+
+    .pricetotalquantityform {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .formamount {
+        width: 30%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .information-usj {
+      text-align: center;
+
+      .hotline-reserve {
+        margin-top: 50px !important;
+        justify-content: unset !important;
+
+        .reservervosplace {
+          padding: 10px !important;
+        }
+
+        .row-hot-reser {
+          display: flex;
+          justify-content: unset !important;
+        }
+      }
+
+      .top-mid {
+        .FrameBackground {
+          margin-top: 50px !important;
+          margin-left: 0% !important;
+          min-height: 200px;
+          height: 380px !important;
+
+          .box {
+            .top {
+              margin-top: 5%;
+              font-size: 16px !important;
+            }
+
+            .title {
+              margin-top: 5%;
+              font-size: 28px !important;
+            }
+
+            .sub {
+              margin-top: 5%;
+              font-size: 16px !important;
+            }
+
+            .btn-reserv {
+              margin-top: 5% !important;
+
+              button {
+                padding: 10px 15px !important;
+                font-size: 17px !important;
+              }
+            }
+          }
+        }
+
+        .AVAVenueAchrafieh {
+          height: 430px !important;
+          min-height: 200px;
+
+          .text-overlay {
+            .left {
+              width: 100px !important;
+              height: 100px !important;
+
+              p {
+                font-size: 19px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 767.98px) {
+    .information-usj {
+      text-align: center;
+
+      .hotline-reserve {
+        margin-top: 50px !important;
+
+        .row-hot-reser {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 50px;
+          justify-content: center !important;
+        }
+      }
+
+      .top-mid {
+        .frameback {
+          margin-left: 0% !important;
+        }
+      }
+    }
+
+    .top-body {
+      .box-body-top .text .title {
+        font-size: 17px !important;
+      }
+
+      .box-body-top .text .sub-title {
+        font-size: 30px !important;
+      }
+    }
+
+    .solution-common {
+      padding: 2rem;
+
+      .reserveyourplace {
+        max-width: 100%;
+  
+        padding: 2rem;
+
+			.form-text{
+			  width: 220px;
+			  .btn-submit{
+				width: 200px;
+				font-size: 15px !important;
+	
 			  }
-		       
 			}
-		    }
-		  }
-		}
-	  }
-	}
+        .pricetotalquantity {
+          flex-direction: column;
+          max-width: 100%;
 
-	.solution-common {
-		min-height: 80vh;
-		background-repeat: no-repeat;
-		background-position: center;
-		padding: 6rem;
-	
-		.reserveyourplace {
-			border-radius: 16px;
-			background-color: rgb(217 255 253 / 62%);
-			padding: 3rem;
-			display: flex;
-			flex-direction: column;
-			margin: auto;
-			    max-width: 906px;
-			.pricetotalquantity{
-				display: flex;
-				justify-content: space-between;
-				max-width: 50%;
-	
-				#usj_ticket_amount {
-					width: 22%;
-				}
-	
-				.pricetotalquantityinput {
-					display: flex;
-					flex-direction: column;
-	
-					#usj_ticket_email input{
-						width: 65% !important;
-					}
-					#usj_ticket_phoneNumber input{
-						width: 65% !important;
-					}
-				}
-			}
-		}
-		.pricetotalquantityform{
-			display: flex;
-			flex-direction: column;
-			gap: 10px;
-	
-			.formamount{
-				width: 30%;
-			}
-		}
+          #usj_ticket_amount {
+            width: 100%;
+          }
+        }
+      }
+
+      .pricetotalquantityform .formamount {
+        width: 100%;
+        /* Full width on mobile */
+      }
+    }
+  }
+
+  @media screen and (max-width: 560px) {
+    .information-usj {
+      .top-mid {
+        .FrameBackground {
+          margin-left: 0% !important;
+          min-height: 200px;
+          height: 350px !important;
+          margin-top: 50px !important;
+
+          .box {
+            .top {
+              margin-top: 5%;
+              font-size: 15px !important;
+            }
+
+            .title {
+              margin-top: 5%;
+              font-size: 22px !important;
+            }
+
+            .sub {
+              margin-top: 5%;
+              font-size: 15px !important;
+            }
+
+            .btn-reserv {
+              margin-top: 5% !important;
+
+              button {
+                padding: 10px 15px !important;
+                font-size: 16px !important;
+              }
+            }
+          }
+        }
+
+        .AVAVenueAchrafieh {
+          height: 350px !important;
+          min-height: 150px;
+
+          .text-overlay {
+            left: 3% !important;
+
+            .left {
+              width: 80px !important;
+              height: 80px !important;
+
+              p {
+                font-size: 15px !important;
+              }
+            }
+
+            .right {
+              margin-left: 5px !important;
+
+              p {
+                font-size: 12px !important;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .top-body {
+      .box-body-top .logo-img img {
+        height: 200px;
+      }
+
+      .box-body-top .text .title {
+        font-size: 15px !important;
+      }
+
+      .box-body-top .text .sub-title {
+        font-size: 25px !important;
+      }
+    }
+  }
+  @media screen and (min-width: 1120px) {
+	.top-section-usj-ticket .information-usj .top .top-mid .FrameBackground {
+		 margin-left: -10%;
+	 }
 	}
+  @media screen and (min-width: 1320px) {
+   .top-section-usj-ticket .information-usj .top .top-mid .FrameBackground {
+		margin-left: -15%;
+    }
+  }
 }
-
-      

@@ -23,8 +23,8 @@ class IndexController extends AbstractController
 
 
 	/**
-	 * @Route("/usjticket", name="app_usj_ticket")
-	 * @Route("/usjticket/submit", name="app_usj_ticket_form", methods="POST")
+	 * @Route("/", name="app_usj_ticket")
+	 * @Route("/submit", name="app_usj_ticket_form", methods="POST")
 	 */
 	public function index(Request $request)
 	{
@@ -76,8 +76,8 @@ class IndexController extends AbstractController
 
 
 			try {
-				$this->mr->persist($newTicket);
-				$this->mr->flush();
+				$this->usjTicketEntity->persist($newTicket);
+				$this->usjTicketEntity->flush();
 				$error = "Form successfully submitted";
 				$form = $this->createForm(UsjTicketType::class);
 				return $this->render('usjticket/index.html.twig', [
