@@ -306,6 +306,7 @@
 		font-family: $Bold;
 		font-size: 19px;
 		border-radius: 30px;
+		white-space: nowrap;
 	  }
     }
 
@@ -434,7 +435,7 @@
 			.form-text{
 			  width: 220px;
 			  .btn-submit{
-				width: 200px;
+				width: 220px;
 				font-size: 15px !important;
 	
 			  }
