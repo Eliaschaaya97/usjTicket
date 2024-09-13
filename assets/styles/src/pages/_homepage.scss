@@ -1,21 +1,19 @@
 .Usjticket {
-
-
   .top-section-usj-ticket {
     .banner_section {
       background-image: url("/assets/images/usjticket/bluesky.png");
       background-position: center;
-	  padding-bottom: 200px;
-	  background-repeat: no-repeat;
-	  background-size: cover;
+      padding-bottom: 200px;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 
-  .information-usj .top {
+    .information-usj .top {
       display: flex;
       justify-content: space-between;
       width: 100%;
       object-fit: contain;
-	  padding-left: 15px;
+      padding-left: 15px;
 
       .row-hot-reser {
         display: flex;
@@ -40,16 +38,16 @@
             font-family: $Bold;
             font-size: 19px;
             white-space: nowrap;
-			border: none;
-			margin-top: -17px;
+            border: none;
+            margin-top: -17px;
           }
         }
       }
 
       .top-mid {
-		margin: auto;
-		display: flex;
-		justify-content: center;
+        margin: auto;
+        display: flex;
+        justify-content: center;
         .frameback {
           margin-left: -25%;
         }
@@ -58,8 +56,8 @@
           border-radius: 20px;
           background-image: url("/assets/images/usjticket/AVAVenueAchrafieh.png");
           background-position: center;
-		  background-repeat: no-repeat;
-	      background-size: cover;
+          background-repeat: no-repeat;
+          background-size: cover;
           height: 650px;
 
           .text-overlay {
@@ -87,7 +85,7 @@
           .right {
             display: flex;
             margin-left: 10px;
-			align-items: end;
+            align-items: end;
             p {
               font-family: $Medium;
             }
@@ -98,11 +96,11 @@
           border-radius: 20px;
           background-image: url("/assets/images/usjticket/FrameBackground.png");
           background-position: center;
-	      background-size: cover;
+          background-size: cover;
           height: 550px;
           margin-top: 50px;
           margin-left: -50px;
-		  background-repeat: no-repeat;
+          background-repeat: no-repeat;
 
           .box {
             padding: 10px;
@@ -208,9 +206,9 @@
       flex-direction: column;
       margin: auto;
       max-width: 906px;
-	  .form-text{
-		width: 500px;
-	  }
+      .form-text {
+        width: 500px;
+      }
       h1 {
         font-family: $Bold;
       }
@@ -235,25 +233,25 @@
           height: 55px;
           border-radius: 7px;
           width: 150px;
-		  font-size: 29px;
-		  color: black;
-		  padding-top: 7px;
-		  font-family: $AvenirBlack;
+          font-size: 29px;
+          color: black;
+          padding-top: 7px;
+          font-family: $AvenirBlack;
         }
         .title-quant {
           font-size: 17px;
           font-family: $MontserratSemiBold;
         }
         .quant {
+          display: flex;
           background-color: #fff;
           padding: 5px;
           border: none;
           height: 55px;
           border-radius: 7px;
           width: 80px;
-		  font-size: 29px;
-		  font-family: $AvenirBlack;
-
+          font-size: 29px;
+          font-family: $AvenirBlack;
         }
         .title-email {
           font-size: 16px;
@@ -277,8 +275,7 @@
           text-align: center;
           width: 100%;
           border: none;
-		  color: #1196CA;
-		  
+          color: #1196ca;
         }
       }
       .pricetotalquantityinput {
@@ -296,18 +293,18 @@
           margin-top: -10px !important;
         }
       }
-	  .btn-submit{
-		width: 260px;
-		border: none;
-		text-align: center;
-		background-color: white;
-		padding: 15px 20px;
-		color: black;
-		font-family: $Bold;
-		font-size: 19px;
-		border-radius: 30px;
-		white-space: nowrap;
-	  }
+      .btn-submit {
+        width: 260px;
+        border: none;
+        text-align: center;
+        background-color: white;
+        padding: 15px 20px;
+        color: black;
+        font-family: $Bold;
+        font-size: 19px;
+        border-radius: 30px;
+        white-space: nowrap;
+      }
     }
 
     .pricetotalquantityform {
@@ -429,17 +426,16 @@
 
       .reserveyourplace {
         max-width: 100%;
-  
+
         padding: 2rem;
 
-			.form-text{
-			  width: 220px;
-			  .btn-submit{
-				width: 220px;
-				font-size: 15px !important;
-	
-			  }
-			}
+        .form-text {
+          width: 220px;
+          .btn-submit {
+            width: 220px;
+            font-size: 15px !important;
+          }
+        }
         .pricetotalquantity {
           flex-direction: column;
           max-width: 100%;
@@ -536,13 +532,13 @@
     }
   }
   @media screen and (min-width: 1120px) {
-	.top-section-usj-ticket .information-usj .top .top-mid .FrameBackground {
-		 margin-left: -10%;
-	 }
-	}
+    .top-section-usj-ticket .information-usj .top .top-mid .FrameBackground {
+      margin-left: -10%;
+    }
+  }
   @media screen and (min-width: 1320px) {
-   .top-section-usj-ticket .information-usj .top .top-mid .FrameBackground {
-		margin-left: -15%;
+    .top-section-usj-ticket .information-usj .top .top-mid .FrameBackground {
+      margin-left: -15%;
     }
   }
 }
