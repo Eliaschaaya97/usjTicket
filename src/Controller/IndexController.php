@@ -80,7 +80,7 @@ class IndexController extends AbstractController
 				$this->usjTicketEntity->flush();
 				$error = "Form successfully submitted";
 				$form = $this->createForm(UsjTicketType::class);
-				return $this->render('usjticket/index.html.twig', [
+				return $this->render('base.html.twig', [
 					'parameters' => $parameters,
 					'form' => $form->createView(),
 					'errordescription' => $error
