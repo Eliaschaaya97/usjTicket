@@ -32,7 +32,7 @@ class UsjTicketType extends AbstractType
 			->add('email', EmailType::class, [
 				'required' => true,
 				'attr' => [
-					'placeholder' => 'example@example.com',
+					'placeholder' => 'Example@example.com',
 				],
 			])
 			->add('phoneNumber', IntegerType::class, [

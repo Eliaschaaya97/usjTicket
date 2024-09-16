@@ -32,7 +32,7 @@
           }
 
           .reservervosplace {
-			color: black;
+            color: black;
             background-color: white;
             padding: 15px 40px;
             border-radius: 30px;
@@ -75,10 +75,17 @@
               text-align: center;
               padding: 10px;
               border-radius: 20px;
-
-              p {
-                color: black;
-                font-family: $Medium;
+              .backgroud-left {
+                .title {
+                  color: black;
+                  font-family: $Bold;
+                  font-size: 24px;
+                }
+                .sub {
+                  color: black;
+                  font-family: $Bold;
+                  font-size: 32px;
+                }
               }
             }
           }
@@ -140,7 +147,7 @@
                 font-size: 19px;
                 white-space: nowrap;
                 border: none;
-				color: black;
+                color: black;
               }
             }
           }
@@ -207,7 +214,7 @@
       display: flex;
       flex-direction: column;
       margin: auto;
-      max-width: 906px;
+      max-width: 1000px;
       .form-text {
         width: 500px;
       }
@@ -229,14 +236,14 @@
           font-family: $MontserratSemiBold;
         }
         .price {
-          background-color: #cfdde4;
+          background-color: #e1e9ec;
           padding: 15px 20px;
           margin-right: 20px;
           height: 55px;
           border-radius: 7px;
           width: 150px;
           font-size: 29px;
-          color: black;
+          color: #3b3b3b;
           padding-top: 7px;
           font-family: $AvenirBlack;
         }
@@ -254,6 +261,58 @@
           width: 80px;
           font-size: 29px;
           font-family: $AvenirBlack;
+		  align-items: center; 
+		  gap: 5px; 
+		  .formamount {
+			width: 100px; 
+			text-align: center;
+			padding: 5px;
+			border: 1px solid #1196ca; 
+		}
+		
+		.quantity-buttons {
+			display: flex;
+			flex-direction: column; 
+			height: 55px;
+			margin-right: -5px;
+		}
+		
+		.btn-plus {
+			background-color: #cfe3f6; 
+			color: #1196ca; 
+			cursor: pointer;
+			width: 25px;
+			font-size: 16px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border:none;
+			height: 100%;
+			border-top-right-radius: 7px;
+
+		}
+		.btn-minus{	
+			height: 100%;
+		  background-color: #e6e0e0; 
+			color: #1196ca; 
+			cursor: pointer;
+			width: 25px;
+			font-size: 17px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border:none;
+			border-bottom-right-radius: 7px;
+
+		}
+		
+		.btn-plus:hover, .btn-minus:hover {
+			color: #1196ca; 
+		}
+		
+		.btn-plus:active, .btn-minus:active {
+			color: #1196ca; 
+		}
         }
         .title-email {
           font-size: 16px;
@@ -273,12 +332,27 @@
         .phone {
           text-wrap-style: 0;
         }
-        #usj_ticket_amount {
-          text-align: center;
-          width: 100%;
-          border: none;
-          color: #1196ca;
-        }
+ 
+		#usj_ticket_amount {
+			text-align: center;
+			width: 100%;
+			border: none;
+			color: #1196ca;
+			cursor: pointer;
+			padding: 5px;
+		}
+		
+		#usj_ticket_amount::-webkit-inner-spin-button,
+		#usj_ticket_amount::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+		
+		#usj_ticket_amount {
+			-moz-appearance: textfield;
+		}
+		
+		
       }
       .pricetotalquantityinput {
         display: flex;
@@ -306,7 +380,7 @@
         font-size: 19px;
         border-radius: 30px;
         white-space: nowrap;
-		cursor: pointer;
+        cursor: pointer;
       }
     }
 
@@ -458,6 +532,9 @@
 
   @media screen and (max-width: 560px) {
     .information-usj {
+      .top .hotline-reserve .d-flex .reservervosplace {
+        font-size: 15px !important;
+      }
       .top-mid {
         .FrameBackground {
           margin-left: 0% !important;
@@ -503,8 +580,13 @@
               width: 80px !important;
               height: 80px !important;
 
-              p {
-                font-size: 15px !important;
+              .backgroud-left {
+                .title {
+                  font-size: 17px !important;
+                }
+                .sub {
+                  font-size: 21px !important;
+                }
               }
             }
 
