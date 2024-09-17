@@ -71,8 +71,8 @@ class IndexController extends AbstractController
 			$newTicket = new UsjTicket();
 			$newTicket->setEmail($data->getEmail());
 			$newTicket->setPhoneNumber($data->getPhoneNumber());
-			$newTicket->setAmount($data->getAmount());
-			$newTicket->setTotalPrice($data->getAmount() * 250);
+			$newTicket->setQuantity($data->getQuantity());
+			$newTicket->setTotalPrice($data->getQuantity() * 250);
 
 
 			try {

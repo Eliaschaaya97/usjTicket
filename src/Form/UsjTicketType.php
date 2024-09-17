@@ -16,7 +16,7 @@ class UsjTicketType extends AbstractType
 	public function buildForm(FormBuilderInterface $builder, array $options): void
 	{
 		$builder
-			->add('amount', IntegerType::class, [
+			->add('quantity', IntegerType::class, [
 				'required' => true,
 				'attr' => [
 					'min' => 1,
