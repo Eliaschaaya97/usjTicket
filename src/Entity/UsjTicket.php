@@ -18,9 +18,9 @@ class UsjTicket
 	private $id;
 
 	/**
-	 * @ORM\Column(name="amount")
+	 * @ORM\Column(name="quantity")
 	 */
-	private $amount;
+	private $quantity;
 
 	/**
 	 * @ORM\Column(name="email")
@@ -37,15 +37,6 @@ class UsjTicket
 	 */
 	private $phoneNumber;
 
-	/**
-	 * @ORM\Column(name="created", type="datetime", options={"default": "CURRENT_TIMESTAMP"})
-	 */
-	private $created;
-
-	/**
-	 * @ORM\Column(name="updated", type="datetime", options={"default": "CURRENT_TIMESTAMP"}, nullable=true)
-	 */
-	private $updated;
 
 	public function getId()
 	{
@@ -53,14 +44,14 @@ class UsjTicket
 	}
 
 
-	public function getAmount()
+	public function getQuantity()
 	{
-		return $this->amount;
+		return $this->quantity;
 	}
 
-	public function setAmount($amount)
+	public function setQuantity($quantity)
 	{
-		$this->amount = $amount;
+		$this->quantity = $quantity;
 		return $this;
 	}
 

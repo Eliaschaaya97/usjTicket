@@ -16,7 +16,7 @@
                     <div class='pricetotalquantityinput'>
                         <p class="title-quant">QUANTITE</p>
                         <div class="quant">
-                            {{ form_widget(form.amount, {'attr': {'class': 'formamount', 'id': 'usj_ticket_amount' ,'readonly': 'readonly'}}) }}
+                            {{ form_widget(form.quantity, {'attr': {'class': 'formamount', 'id': 'usj_ticket_quantity' ,'readonly': 'readonly'}}) }}
                             <div class="quantity-buttons">
                                 <button class="btn-plus" type="button" id="increase-btn">+</button>
                                 <button class="btn-minus" type="button" id="decrease-btn">-</button>
@@ -50,7 +50,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const amountInput = document.getElementById('usj_ticket_amount');
+            const amountInput = document.getElementById('usj_ticket_quantity');
             const emailInput = document.getElementById('usj_ticket_email');
             const phoneInput = document.getElementById('usj_ticket_phoneNumber');
             const submitButton = document.getElementById('submit-button');
