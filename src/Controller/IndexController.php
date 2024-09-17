@@ -106,7 +106,6 @@ class IndexController extends AbstractController
 				$this->usjTicketEntity->persist($newTicket);
 				$this->usjTicketEntity->flush();
 				$error = "Form successfully submitted";
-				dd($this->SUYOOL_API_HOST);
 
 				$response = $this->client->request(
 					'POST',
