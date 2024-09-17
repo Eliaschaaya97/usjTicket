@@ -1,8 +1,8 @@
 {% block body %}
-    <div class="solution-common use-money-common" id='reserveyourplace' style="background-image: url('{{ asset('build/images/usjticket/backgroundmidsection.png') }}');">
+    <div class="solution-common use-money-common" id="reserveyourplace" style="background-image: url('{{ asset("build/images/usjticket/backgroundmidsection.png") }}');">
         <div class='reserveyourplace'>
             <h1>Réservez vos places</h1>
-            <p>au profit des bourses aux etudiants</p>
+            <p>au profit des bourses aux étudiants</p>
 
             <div class="mt-3 form-text" style="margin:auto;">
                 {{ form_start(form) }}
@@ -16,7 +16,7 @@
                     <div class='pricetotalquantityinput'>
                         <p class="title-quant">QUANTITEE</p>
                         <div class="quant">
-                            {{ form_widget(form.amount, {'attr': {'class': 'formamount', 'id': 'usj_ticket_amount'}}) }}
+                            {{ form_widget(form.amount, {'attr': {'class': 'formamount', 'id': 'usj_ticket_amount' ,'readonly': 'readonly'}}) }}
                             <div class="quantity-buttons">
                                 <button class="btn-plus" type="button" id="increase-btn">+</button>
                                 <button class="btn-minus" type="button" id="decrease-btn">-</button>
@@ -27,7 +27,7 @@
 
                 <div class='pricetotalquantityinput'>
                     <p class="title-email mt-4">Votre Email pour recevoir les billets</p>
-                    {{ form_widget(form.email, {'attr': {'class': 'formemail', 'id': 'usj_ticket_email'}}) }}
+                    {{ form_widget(form.email, {'attr': {'class': 'formemail', 'id': 'usj_ticket_email' }}) }}
                     <span id="email-error" style="color: red;"></span>
                 </div>
 

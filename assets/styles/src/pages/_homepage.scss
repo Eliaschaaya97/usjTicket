@@ -94,8 +94,13 @@
             display: flex;
             margin-left: 10px;
             align-items: end;
-            p {
+            .ava {
+              font-family: $SemiBold;
+              font-size: 30px;
+            }
+            .event {
               font-family: $Medium;
+              font-size: 18px;
             }
           }
         }
@@ -254,69 +259,96 @@
         .quant {
           display: flex;
           background-color: #fff;
-          padding: 5px;
           border: none;
           height: 55px;
           border-radius: 7px;
           width: 80px;
           font-size: 29px;
           font-family: $AvenirBlack;
-		  align-items: center; 
-		  gap: 5px; 
-		  .formamount {
-			width: 100px; 
-			text-align: center;
-			padding: 5px;
-			border: 1px solid #1196ca; 
-		}
-		
-		.quantity-buttons {
-			display: flex;
-			flex-direction: column; 
-			height: 55px;
-			margin-right: -5px;
-		}
-		
-		.btn-plus {
-			background-color: #cfe3f6; 
-			color: #1196ca; 
-			cursor: pointer;
-			width: 25px;
-			font-size: 16px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			border:none;
-			height: 100%;
-			border-top-right-radius: 7px;
+          align-items: center;
+		  
+          .formamount {
+            width: 100px;
+            text-align: center;
+            padding: 5px;
+            border: 1px solid #1196ca;
+          }
 
-		}
-		.btn-minus{	
+          .quantity-buttons {
+            display: flex;
+            flex-direction: column;
 			height: 100%;
-		  background-color: #e6e0e0; 
-			color: #1196ca; 
-			cursor: pointer;
-			width: 25px;
-			font-size: 17px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			border:none;
-			border-bottom-right-radius: 7px;
+			justify-content: space-between; 
+			width: 35px;
 
-		}
-		
-		.btn-plus:hover, .btn-minus:hover {
-			color: #1196ca; 
-		}
-		
-		.btn-plus:active, .btn-minus:active {
-			color: #1196ca; 
-		}
+          }
+
+          .btn-plus {
+            background-color: #cfe3f6;
+            color: #1196ca;
+            cursor: pointer;
+         width: 100%;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            height: 100%;
+            border-top-right-radius: 7px;
+			flex-grow: 1; 
+          }
+          .btn-minus {
+            height: 100%;
+            background-color: #e6e0e0;
+            color: #1196ca;
+            cursor: pointer;
+			width: 100%;
+            font-size: 17px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            border-bottom-right-radius: 7px;
+			flex-grow: 1; 
+          }
+
+          .btn-plus:hover,
+          .btn-minus:hover {
+            color: #1196ca;
+          }
+
+          .btn-plus:active,
+          .btn-minus:active {
+            color: #1196ca;
+          }
         }
+
+        #usj_ticket_amount {
+          text-align: center;
+          width: 100%;
+          border: none;
+          color: #1196ca;
+          cursor: pointer;
+          padding: 5px;
+        }
+
+        #usj_ticket_amount::-webkit-inner-spin-button,
+        #usj_ticket_amount::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        #usj_ticket_amount {
+			appearance: textfield;
+        }
+      }
+      .pricetotalquantityinput {
+        display: flex;
+        flex-direction: column;
         .title-email {
           font-size: 16px;
           font-family: $AvenirBook;
+          color: black;
         }
         .email {
           width: 300px;
@@ -328,39 +360,15 @@
         .title-phone {
           font-size: 16px;
           font-family: $AvenirBook;
+          color: black;
         }
         .phone {
           text-wrap-style: 0;
         }
- 
-		#usj_ticket_amount {
-			text-align: center;
-			width: 100%;
-			border: none;
-			color: #1196ca;
-			cursor: pointer;
-			padding: 5px;
-		}
-		
-		#usj_ticket_amount::-webkit-inner-spin-button,
-		#usj_ticket_amount::-webkit-outer-spin-button {
-			-webkit-appearance: none;
-			margin: 0;
-		}
-		
-		#usj_ticket_amount {
-			-moz-appearance: textfield;
-		}
-		
-		
-      }
-      .pricetotalquantityinput {
-        display: flex;
-        flex-direction: column;
 
         #usj_ticket_email,
         #usj_ticket_phoneNumber {
-          width: 100% !important;
+          width: 97% !important;
           min-width: 50px;
           border: none !important;
           border-radius: 11px !important;
@@ -369,6 +377,16 @@
           margin-top: -10px !important;
         }
       }
+
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+		input[type='number'] {
+			appearance: textfield;
+		}
+      
       .btn-submit {
         width: 260px;
         border: none;
@@ -593,8 +611,11 @@
             .right {
               margin-left: 5px !important;
 
-              p {
-                font-size: 12px !important;
+              .ava {
+                font-size: 13px !important;
+              }
+              .event {
+                font-size: 11px !important;
               }
             }
           }
