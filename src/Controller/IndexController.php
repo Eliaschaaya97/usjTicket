@@ -10,15 +10,28 @@ use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
+
+
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class IndexController extends AbstractController
 {
 	private $usjTicketEntity;
+	private $client;
+	private $SUYOOL_API_HOST;
+
 
 	// Inject the blogs EntityManagerInterface
-	public function __construct(EntityManagerInterface $usjTicketEntity)
+	public function __construct(EntityManagerInterface $usjTicketEntity, HttpClientInterface $client)
 	{
 		$this->usjTicketEntity = $usjTicketEntity;
+		$this->client = $client;
+		if ($_ENV['APP_ENV'] == 'prod') {
+			$this->SUYOOL_API_HOST = 'https://externalservices.nicebeach-895ccbf8.francecentral.azurecontainerapps.io/api/GlobalAPIs/UsjPayment/InitiatePaymentRequest';
+		} else {
+			$this->SUYOOL_API_HOST = 'http://10.20.80.62/SuyoolGlobalApi/api/UsjPayment/InitiatePaymentRequest';
+		}
 	}
 
 
@@ -73,12 +86,51 @@ class IndexController extends AbstractController
 			$newTicket->setPhoneNumber($data->getPhoneNumber());
 			$newTicket->setQuantity($data->getQuantity());
 			$newTicket->setTotalPrice($data->getQuantity() * 250);
+			$phoneNumber = (string)$data->getPhoneNumber();
 
+			if (strpos($phoneNumber, '9') !== 0) {
+				$phoneNumber = '961' . $phoneNumber;
+			}
+
+			$concat = $phoneNumber . $_ENV['CERTIFICATE'];
+			$secureHash = base64_encode(hash('sha512', $concat, true));
+			$body = [
+				"currencyID" => 1,
+				"mobileNo" => "$phoneNumber",
+				"amount" => ($data->getQuantity() * 250),
+				"merchantID" => 26,
+				"secureHash" => $secureHash
+			];
 
 			try {
 				$this->usjTicketEntity->persist($newTicket);
 				$this->usjTicketEntity->flush();
 				$error = "Form successfully submitted";
+				dd($this->SUYOOL_API_HOST);
+
+				$response = $this->client->request(
+					'POST',
+					$this->SUYOOL_API_HOST,
+					[
+						'json' => $body
+					]
+				);
+				$statusCode = $response->getStatusCode();
+				$content = $response->getContent();
+				// $content = $response->toArray();
+
+				if ($statusCode == 200) {
+					$decodedContent = json_decode($content, true);
+
+					$additionalResponse = $decodedContent['data'];
+
+					$additionalResponseDecoded = json_decode($additionalResponse, true);
+
+					$code = $additionalResponseDecoded['AuthCode'];
+					$newredirect = new RedirectResponse("https://suyool.com/$code");
+					return $newredirect;
+				}
+
 				$form = $this->createForm(UsjTicketType::class);
 				return $this->render('base.html.twig', [
 					'parameters' => $parameters,
