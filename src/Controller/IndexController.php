@@ -98,14 +98,14 @@ class IndexController extends AbstractController
 				"currencyID" => 1,
 				"mobileNo" => "$phoneNumber",
 				"amount" => ($data->getQuantity() * 250),
-				"merchantID" => 26,
+				"merchantID" => 50,
 				"secureHash" => $secureHash
 			];
-
+			// dd($body);
 			try {
 				$this->usjTicketEntity->persist($newTicket);
 				$this->usjTicketEntity->flush();
-				$error = "Form successfully submitted";
+				$error = "Le form a été soumis avec succès";
 
 				$response = $this->client->request(
 					'POST',
@@ -126,9 +126,21 @@ class IndexController extends AbstractController
 					$additionalResponseDecoded = json_decode($additionalResponse, true);
 
 					$code = $additionalResponseDecoded['AuthCode'];
-					$newredirect = new RedirectResponse("https://suyool.com/$code");
+					// $newredirect = new RedirectResponse("https://suyool.com/$code");
+					$newredirect = new RedirectResponse("http://suyool.lss/$code");
 					return $newredirect;
+				} else {
+					$error = "Une erreur s'est produite lors de l'envoi du formulaire. Veuillez réessayer.";
+
+					$form = $this->createForm(UsjTicketType::class);
+					return $this->render('base.html.twig', [
+						'parameters' => $parameters,
+						'form' => $form->createView(),
+						'errordescription' => $error
+					]);
 				}
+			} catch (\Exception $e) {
+				$error = "Une erreur s'est produite lors de l'envoi du formulaire. Veuillez réessayer.";
 
 				$form = $this->createForm(UsjTicketType::class);
 				return $this->render('base.html.twig', [
@@ -136,8 +148,6 @@ class IndexController extends AbstractController
 					'form' => $form->createView(),
 					'errordescription' => $error
 				]);
-			} catch (\Exception $e) {
-				$error = "Email and number are required";
 				return new JsonResponse([
 					'message' => 'An error occurred: ' . $e->getMessage(),
 					'status' => 'error'
