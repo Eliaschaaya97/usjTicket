@@ -658,6 +658,25 @@
   @media screen and (min-width: 1320px) {
     .top-section-usj-ticket .information-usj .top .top-mid .FrameBackground {
       margin-left: -15%;
+ 
+    }
+
+  }
+  @media screen and (max-width: 1170px) {
+    .top-section-usj-ticket .information-usj .top .logotopsection2{
+      margin-left: 3% !important;
+      width: 210px !important;
+    }
+    .top-section-usj-ticket .information-usj .top .logotopsection{
+    width: 210px !important;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .top-section-usj-ticket .information-usj .top .logotopsection2{
+      width: unset !important;
+    }
+    .top-section-usj-ticket .information-usj .top .logotopsection{
+    width: unset !important;
     }
   }
 }
