@@ -345,6 +345,19 @@
       .pricetotalquantityinput {
         display: flex;
         flex-direction: column;
+        .ninesixone{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-width: 50px;
+          background-color: white;
+          border: none !important;
+          border-radius: 7px !important;
+          height: 64px !important;
+          padding: 5px 15px !important;
+          margin-top: -10px !important;
+          margin-right: 5px;
+        }
         .title-email {
           font-size: 16px;
           font-family: $AvenirBook;

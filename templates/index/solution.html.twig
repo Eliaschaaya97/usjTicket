@@ -33,9 +33,13 @@
 
                 <div class='pricetotalquantityinput'>
                     <p class="title-phone mt-4">Telephone Mobile</p>
+                    <div class='d-flex'>
+                    <p class="ninesixone">961 </p>
                     {{ form_widget(form.phoneNumber, {'attr': {'class': 'formphoneNumber', 'id': 'usj_ticket_phoneNumber'}}) }}
+                    </div>
                     <span id="phone-error" style="color: red;"></span>
                 </div>
+
 
                 <button class="btn-submit mt-4" type="submit" id="submit-button">Réservez Vos Places</button>
 
@@ -61,11 +65,16 @@
             const decreaseButton = document.getElementById('decrease-btn');
             const pricePerUnit = 250;
 
+
+   
+
             function updatePrice() {
                 const amount = parseInt(amountInput.value, 10) || 1;
                 const totalPrice = amount * pricePerUnit;
                 totalPriceElement.textContent = `$${totalPrice}`;
             }
+            
+   
 
             function increaseQuantity() {
                 let currentValue = parseInt(amountInput.value);
@@ -98,13 +107,18 @@
                     emailError.textContent = ''; 
                 }
 
-                if (phoneInput.value.trim() === '') {
-                    phoneError.textContent = 'Le numéro de téléphone est requis';
-                    phoneError.style.color = 'red';
-                    isValid = false;
-                } else {
-                    phoneError.textContent = '';
-                }
+             if (phoneInput.value.trim() === '') {
+                      phoneError.textContent = 'Le numéro de téléphone est requis';
+                     phoneError.style.color = 'red';
+                 isValid = false;
+               } else if (phoneInput.value.trim().length < 7 || phoneInput.value.trim().length > 8) {
+                   phoneError.textContent = 'Le numéro de téléphone doit être composé de 7 ou 8 chiffres';
+                   phoneError.style.color = 'red';
+                   isValid = false;
+            } else {
+                 phoneError.textContent = '';
+                   }
+
 
                 return isValid;
             }

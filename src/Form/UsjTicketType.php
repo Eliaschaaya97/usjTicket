@@ -38,7 +38,7 @@ class UsjTicketType extends AbstractType
 			->add('phoneNumber', IntegerType::class, [
 				'required' => true,
 				'attr' => [
-					'placeholder' => '+961 xx xxx xxx',
+					'placeholder' => 'xx xxx xxx',
 				],
 				'constraints' => [
 					new Positive(['message' => 'The phone number must be a positive number.']),
