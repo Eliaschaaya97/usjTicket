@@ -126,8 +126,8 @@ class IndexController extends AbstractController
 					$additionalResponseDecoded = json_decode($additionalResponse, true);
 
 					$code = $additionalResponseDecoded['AuthCode'];
-					// $newredirect = new RedirectResponse("https://suyool.com/$code");
-					$newredirect = new RedirectResponse("http://suyool.lss/$code");
+					$newredirect = new RedirectResponse("https://suyool.com/$code");
+					// $newredirect = new RedirectResponse("http://suyool.lss/$code");
 					return $newredirect;
 				} else {
 					$error = "Une erreur s'est produite lors de l'envoi du formulaire. Veuillez réessayer.";
