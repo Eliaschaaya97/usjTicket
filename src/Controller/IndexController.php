@@ -60,7 +60,7 @@ class IndexController extends AbstractController
 			$data = $form->getData();
 
 			$recaptchaResponse = $request->request->get('g-recaptcha-response');
-			$recaptcha = new ReCaptcha('6LczWk4qAAAAAL5oo_oF2HgDuyDEH3TlFWAP2XyP');
+			$recaptcha = new ReCaptcha($_ENV['SECRET_KEY']);
 			$recaptchaResult = $recaptcha->verify($recaptchaResponse);
 			if ($recaptchaResult->isSuccess()) {
 
