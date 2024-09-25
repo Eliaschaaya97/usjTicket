@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Log;
 use App\Entity\UsjTicket;
-use App\Entity\Logs;
 use App\Form\UsjTicketType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,7 +13,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-use App\Service\LogsService;
 use ReCaptcha\ReCaptcha;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
@@ -37,9 +36,11 @@ class IndexController extends AbstractController
 			$this->SUYOOL_REDIRECT = "https://suyool.com/";
 			// $this->SUYOOL_REDIRECT = "http://suyool.lss/";
 		} else {
-			$this->SUYOOL_API_HOST = 'http://10.20.80.62/SuyoolGlobalApi/api/UsjPayment/InitiatePaymentRequest';
-			$this->SUYOOL_MERCHANT = 26;
-			$this->SUYOOL_REDIRECT = "http://suyool.lss/";
+			// $this->SUYOOL_API_HOST = 'http://10.20.80.62/SuyoolGlobalApi/api/UsjPayment/InitiatePaymentRequest';
+			$this->SUYOOL_API_HOST = 'https://externalservices.nicebeach-895ccbf8.francecentral.azurecontainerapps.io/api/GlobalAPIs/UsjPayment/InitiatePaymentRequest';
+			$this->SUYOOL_MERCHANT = 50;
+			// $this->SUYOOL_REDIRECT = "http://suyool.lss/";
+			$this->SUYOOL_REDIRECT = "https://suyool.com/";
 		}
 	}
 
@@ -63,7 +64,7 @@ class IndexController extends AbstractController
 			$recaptcha = new ReCaptcha($_ENV['SECRET_KEY']);
 			$recaptchaResult = $recaptcha->verify($recaptchaResponse);
 			if ($recaptchaResult->isSuccess()) {
-
+				// dd('recaptcha success');
 				$newTicket = new UsjTicket();
 				$newTicket->setEmail($data->getEmail());
 				$newTicket->setPhoneNumber($data->getPhoneNumber());
@@ -85,11 +86,12 @@ class IndexController extends AbstractController
 					"secureHash" => $secureHash
 				];
 
-
 				try {
 					$this->usjTicketEntity->persist($newTicket);
 					$this->usjTicketEntity->flush();
+
 					$error = "Le form a été soumis avec succès";
+
 
 					$response = $this->client->request(
 						'POST',
@@ -103,8 +105,16 @@ class IndexController extends AbstractController
 					$content = $response->getContent();
 
 					$content = $response->toArray();
-					$pushlog = new LogsService($this->usjTicketEntity);
-					$pushlog->pushLogs(new Logs, "USJTicket", $body, $content, $this->SUYOOL_API_HOST, $statusCode);
+
+
+					$pushlog = new Log();
+					$pushlog->setidentifier("USJTicket");
+					$pushlog->setrequest(json_encode($body));
+					$pushlog->setresponse(json_encode($content));
+					$pushlog->seturl($this->SUYOOL_API_HOST);
+					$pushlog->setresponseStatusCode($statusCode);
+					$this->usjTicketEntity->persist($pushlog);
+					$this->usjTicketEntity->flush();
 
 					if ($statusCode == 200 && $content['flagCode'] == 4) {
 						$popup = true;
