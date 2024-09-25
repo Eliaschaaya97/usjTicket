@@ -31,7 +31,7 @@ class IndexController extends AbstractController
 	{
 		$this->usjTicketEntity = $usjTicketEntity;
 		$this->client = $client;
-		if ($_ENV['APP_ENV'] == 'dev') {
+		if ($_ENV['APP_ENV'] == 'prod') {
 			$this->SUYOOL_API_HOST = 'https://externalservices.nicebeach-895ccbf8.francecentral.azurecontainerapps.io/api/GlobalAPIs/UsjPayment/InitiatePaymentRequest';
 			$this->SUYOOL_MERCHANT = 50;
 			$this->SUYOOL_REDIRECT = "https://suyool.com/";
