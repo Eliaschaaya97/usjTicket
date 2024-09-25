@@ -1,58 +1,66 @@
 {% block body %}
-    <div class="solution-common use-money-common" id="reserveyourplace" style="background-image: url('{{ asset("build/images/usjticket/backgroundmidsection.png") }}');">
-        <div class='reserveyourplace'>
-            <h1>Réservez vos places</h1>
-            <p>au profit des bourses aux étudiants</p>
+<div class="solution-common use-money-common" id="reserveyourplace" style="background-image: url('{{ asset(" build/images/usjticket/backgroundmidsection.png") }}');">
+	<div class='reserveyourplace'>
+		<h1>Réservez vos places</h1>
+		<p>au profit des bourses aux étudiants</p>
 
-            <div class="mt-3 form-text" style="margin:auto;">
-                {{ form_start(form) }}
+		<div class="mt-3 form-text" style="margin:auto;">
+			{{ form_start(form) }}
 
-                <div class='pricetotalquantity d-flex w-100'>
-                    <div class='pricetotalquantityinput'>
-                        <p class="title-price">PRIX TOTAL</p>
-                        <p class="price" id="total-price">$250</p>
-                    </div>
+			<div class='pricetotalquantity d-flex w-100'>
+				<div class='pricetotalquantityinput'>
+					<p class="title-price">PRIX TOTAL</p>
+					<p class="price" id="total-price">$250</p>
+				</div>
 
-                    <div class='pricetotalquantityinput'>
-                        <p class="title-quant">QUANTITE</p>
-                        <div class="quant">
-                            {{ form_widget(form.quantity, {'attr': {'class': 'formamount', 'id': 'usj_ticket_quantity' ,'readonly': 'readonly'}}) }}
-                            <div class="quantity-buttons">
-                                <button class="btn-plus" type="button" id="increase-btn">+</button>
-                                <button class="btn-minus" type="button" id="decrease-btn">-</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+				<div class='pricetotalquantityinput'>
+					<p class="title-quant">QUANTITE</p>
+					<div class="quant">
+						{{ form_widget(form.quantity, {'attr': {'class': 'formamount', 'id': 'usj_ticket_quantity' ,'readonly': 'readonly'}}) }}
+						<div class="quantity-buttons">
+							<button class="btn-plus" type="button" id="increase-btn">+</button>
+							<button class="btn-minus" type="button" id="decrease-btn">-</button>
+						</div>
+					</div>
+				</div>
+			</div>
 
-                <div class='pricetotalquantityinput'>
-                    <p class="title-email mt-4">Votre Email pour recevoir les billets</p>
-                    {{ form_widget(form.email, {'attr': {'class': 'formemail', 'id': 'usj_ticket_email' }}) }}
-                    <span id="email-error" style="color: red;"></span>
-                </div>
+			<div class='pricetotalquantityinput'>
+				<p class="title-email mt-4">Votre Email pour recevoir les billets</p>
+				{{ form_widget(form.email, {'attr': {'class': 'formemail', 'id': 'usj_ticket_email' }}) }}
+				<span id="email-error" style="color: red;"></span>
+			</div>
 
-                <div class='pricetotalquantityinput'>
-                    <p class="title-phone mt-4">Telephone Mobile</p>
-                    <div class='d-flex'>
-                    <p class="ninesixone">961 </p>
-                    {{ form_widget(form.phoneNumber, {'attr': {'class': 'formphoneNumber', 'id': 'usj_ticket_phoneNumber'}}) }}
-                    </div>
-                    <span id="phone-error" style="color: red;"></span>
-                </div>
+			<div class='pricetotalquantityinput'>
+				<p class="title-phone mt-4">Telephone Mobile</p>
+				<div class='d-flex'>
+					<p class="ninesixone">961
+					</p>
+					{{ form_widget(form.phoneNumber, {'attr': {'class': 'formphoneNumber', 'id': 'usj_ticket_phoneNumber'}}) }}
+				</div>
+				<span id="phone-error" style="color: red;"></span>
+			</div>
 
+		<div class="g-recaptcha" data-sitekey="6LdpR84pAAAAADvUckngDSrvfV2t6oG1XiujWFUQ" style="margin-bottom: 10px" data-callback="enableButton"></div>
+			<button class="btn-submit mt-4" type="submit" id="submit-button" disabled>Réservez Vos Places</button>
 
-                <button class="btn-submit mt-4" type="submit" id="submit-button">Réservez Vos Places</button>
+			{% if errordescription is not empty %}
+				<p>{{ errordescription }}</p>
+			{% endif %}
 
-                {% if errordescription is not empty %}
-                    <p>{{ errordescription }}</p>
-                {% endif %}
+			{{ form_end(form) }}
+		</div>
+	</div>
+</div>
 
-                {{ form_end(form) }}
-            </div>
-        </div>
-    </div>
 
     <script>
+
+	function enableButton() {
+		var contactUsButton = document.getElementById("submit-button");
+		contactUsButton.disabled = false;
+	      }
+
         document.addEventListener('DOMContentLoaded', function () {
             const amountInput = document.getElementById('usj_ticket_quantity');
             const emailInput = document.getElementById('usj_ticket_email');
