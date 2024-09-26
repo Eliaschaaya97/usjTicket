@@ -381,7 +381,7 @@
 
         #usj_ticket_email,
         #usj_ticket_phoneNumber {
-          width: 97% !important;
+          width:100% !important;
           min-width: 50px;
           border: none !important;
           border-radius: 11px !important;
@@ -538,7 +538,7 @@
         padding: 2rem;
 
         .form-text {
-          width: 220px;
+          width: unset;
           .btn-submit {
             width: 220px;
             font-size: 15px !important;
@@ -562,6 +562,11 @@
   }
 
   @media screen and (max-width: 560px) {
+    .solution-common {
+      padding: 1rem;
+    }
+
+
     .information-usj {
       .top .hotline-reserve .d-flex .reservervosplace {
         font-size: 15px !important;
@@ -678,5 +683,29 @@
     .top-section-usj-ticket .information-usj .top .logotopsection{
     width: unset !important;
     }
+  }
+  @media screen and (max-width: 370px) {
+    .solution-common .reserveyourplace .pricetotalquantityinput #usj_ticket_email{
+      max-width: 275px;
+    }
+ .solution-common .reserveyourplace .pricetotalquantityinput #usj_ticket_phoneNumber {
+max-width: 245px !important;
+width: unset !important;
+padding: 5px 30px !important;
+
+    }
+     .solution-common .reserveyourplace {
+      max-width: 100%;
+      padding: 0.5rem;
+  }
+    .solution-common {
+      padding: 0.5rem;
+    }
+    .solution-common {
+      .g-recaptcha{
+        margin-left: -5px;
+
+      }
+ }
   }
 }
