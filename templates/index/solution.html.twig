@@ -1,143 +1,217 @@
 {% block body %}
-<div class="solution-common use-money-common" id="reserveyourplace" style="background-image: url('{{ asset(" build/images/usjticket/backgroundmidsection.png") }}');">
-	<div class='reserveyourplace'>
-		<h1>Réservez vos places</h1>
-		<p>au profit des bourses aux étudiants</p>
+	<div class="solution-common use-money-common" id="reserveyourplace">
+		<div class="reserveyourplace">
+			<h1>Réservez vos places</h1>
+			<p>au profit des bourses aux étudiants</p>
 
-		<div class="mt-3 form-text" style="margin:auto;">
-			{{ form_start(form) }}
+			<div class="mt-3 form-text" style="margin:auto;">
+				{{ form_start(form) }}
 
-			<div class='pricetotalquantity d-flex w-100'>
-				<div class='pricetotalquantityinput'>
-					<p class="title-price">PRIX TOTAL</p>
-					<p class="price" id="total-price">$250</p>
-				</div>
+				<div class="pricetotalquantity d-flex w-100">
+					<div class="pricetotalquantityinput">
+						<p class="title-price">PRIX TOTAL</p>
+						<p class="price" id="total-price">$250</p>
+					</div>
 
-				<div class='pricetotalquantityinput'>
-					<p class="title-quant">QUANTITE</p>
-					<div class="quant">
-						{{ form_widget(form.quantity, {'attr': {'class': 'formamount', 'id': 'usj_ticket_quantity' ,'readonly': 'readonly'}}) }}
-						<div class="quantity-buttons">
-							<button class="btn-plus" type="button" id="increase-btn">+</button>
-							<button class="btn-minus" type="button" id="decrease-btn">-</button>
+					<div class="pricetotalquantityinput" id="place-quantity" style="margin-right: 60px;">
+						<p class="title-quant" style="white-space: nowrap;">
+							<input type="checkbox" checked id="checkbox-place" style="margin-right: 5px; "/>Par Place</p>
+						<div class="quant">
+							{{ form_widget(form.quantity, {'attr': {'class': 'formamount', 'id': 'usj_ticket_quantity' ,'readonly': 'readonly'}}) }}
+							<div class="quantity-buttons">
+								<button class="btn-plus" type="button" id="increase-btn">+</button>
+								<button class="btn-minus" type="button" id="decrease-btn">-</button>
+							</div>
+						</div>
+					</div>
+
+					<div class='pricetotalquantityinput' id="table-quantity">
+						<p class="title-quant" style="white-space: nowrap;">
+							<input type="checkbox" id="checkbox-table-place" style="margin-right: 5px;"/>
+							Par Table de 10</p>
+						<div class="quant">
+							{{ form_widget(form.quantitytable, {'attr': {'class': 'formamount', 'id': 'usj_ticket_quantitytable' ,'readonly': 'readonly'}}) }}
+							<div class="quantity-buttons">
+								<button class="btn-plus" type="button" id="increase-table-btn">+</button>
+								<button class="btn-minus" type="button" id="decrease-table-btn">-</button>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 
-			<div class='pricetotalquantityinput'>
-				<p class="title-email mt-4">Votre Email pour recevoir les billets</p>
-				{{ form_widget(form.email, {'attr': {'class': 'formemail', 'id': 'usj_ticket_email' }}) }}
-				<span id="email-error" style="color: red;"></span>
-			</div>
-
-			<div class='pricetotalquantityinput'>
-				<p class="title-phone mt-4">Telephone Mobile</p>
-				<div class='d-flex'>
-					<p class="ninesixone">961
-					</p>
-					{{ form_widget(form.phoneNumber, {'attr': {'class': 'formphoneNumber', 'id': 'usj_ticket_phoneNumber'}}) }}
+				<div class='pricetotalquantityinput'>
+					<p class="title-email mt-4">Votre Email pour recevoir les billets</p>
+					{{ form_widget(form.email, {'attr': {'class': 'formemail', 'id': 'usj_ticket_email' }}) }}
+					<span id="email-error" style="color: red;"></span>
 				</div>
-				<span id="phone-error" style="color: red;"></span>
+
+				<div class='pricetotalquantityinput'>
+					<p class="title-phone mt-4">Telephone Mobile</p>
+					<div class='d-flex'>
+						<p class="ninesixone">961
+						</p>
+						{{ form_widget(form.phoneNumber, {'attr': {'class': 'formphoneNumber', 'id': 'usj_ticket_phoneNumber'}}) }}
+					</div>
+					<span id="phone-error" style="color: red;"></span>
+				</div>
+
+				<div class="box-recap pt-5">
+					<div class="g-recaptcha" data-sitekey="6LczWk4qAAAAADaXO3rcR95l1DvRXHwm-9T5qJXT" style="margin-bottom: 10px" data-callback="enableButton"></div>
+				</div>
+
+				<div class="d-flex  justify-content-center">
+					<button class="btn-submit mt-4" type="submit" id="submit-button" disabled>Réservez Vos Places</button>
+				</div>
+
+				{% if errordescription is not empty %}
+					<p>{{ errordescription }}</p>
+				{% endif %}
+
+				{{ form_end(form) }}
 			</div>
-
-	<div class="box-recap">	<div class="g-recaptcha" data-sitekey="6LczWk4qAAAAADaXO3rcR95l1DvRXHwm-9T5qJXT" style="margin-bottom: 10px" data-callback="enableButton"></div></div>
-		
-        <div class="d-flex  justify-content-center">	<button class="btn-submit mt-4" type="submit" id="submit-button" disabled>Réservez Vos Places</button> </div>
-
-			{% if errordescription is not empty %}
-				<p>{{ errordescription }}</p>
-			{% endif %}
-
-			{{ form_end(form) }}
 		</div>
 	</div>
-</div>
 
 
-    <script>
+	 <script>
+				
+					function enableButton() {
+						var contactUsButton = document.getElementById("submit-button");
+						contactUsButton.disabled = false;
+					      }
+				
+				document.addEventListener('DOMContentLoaded', function () {
+				    const amountInput = document.getElementById('usj_ticket_quantity');
+				    const amountTableInput = document.getElementById('usj_ticket_quantitytable');
+				    const checkboxPlace = document.getElementById('checkbox-place');
+				    const checkboxTablePlace = document.getElementById('checkbox-table-place');
+				    const emailInput = document.getElementById('usj_ticket_email');
+				    const phoneInput = document.getElementById('usj_ticket_phoneNumber');
+				    const submitButton = document.getElementById('submit-button');
+				    const totalPriceElement = document.getElementById('total-price');
+				    const emailError = document.getElementById('email-error');
+				    const phoneError = document.getElementById('phone-error');
+				    const increaseButton = document.getElementById('increase-btn');
+				    const decreaseButton = document.getElementById('decrease-btn');
+				    const increaseTableButton = document.getElementById('increase-table-btn');
+				    const decreaseTableButton = document.getElementById('decrease-table-btn');
+				    const pricePerUnit = 250;
+				
+				
+				    function updatePrice() {
+				        const amount = parseInt(amountInput.value, 10) || 0;
+				        const tableAmount = parseInt(amountTableInput.value, 10) || 0; 
+				        const totalPrice = (amount + (tableAmount * 10)) * pricePerUnit; 
+				        totalPriceElement.textContent = `$${totalPrice}`;
+				    }
+				
+				
+				    function increaseQuantity(value) {
+				        if (value === 'place' &&  checkboxPlace.checked) {
+				            let currentValue = parseInt(amountInput.value) || 0;
+				            amountInput.value = currentValue + 1;
+				        } else if (value === 'table' &&  checkboxTablePlace.checked) {
+				            console.log("table")
+				            let currentTableValue = parseInt(amountTableInput.value) || 0;
+				            amountTableInput.value = currentTableValue + 1;
+				        }
+				        updatePrice();
+				    }
+				
+				  
+				    function decreaseQuantity(value) {
+				        if (value === 'place' &&  checkboxPlace.checked) {
+				            let currentValue = parseInt(amountInput.value) || 0;
+				            if (currentValue > 0) {
+				                amountInput.value = currentValue - 1;
+				            }
+				        } else if (value === 'table' &&  checkboxTablePlace.checked) {
+				            let currentTableValue = parseInt(amountTableInput.value) || 0;
+				            if (currentTableValue > 0) {
+				                amountTableInput.value = currentTableValue - 1;
+				            }
+				        }
+				        updatePrice();
+				    }
+				
+				
+				    increaseButton.addEventListener('click', function() { increaseQuantity('place'); });
+				    decreaseButton.addEventListener('click', function() { decreaseQuantity('place'); });
+				
+				    increaseTableButton.addEventListener('click', function() { increaseQuantity('table'); });
+				    decreaseTableButton.addEventListener('click', function() { decreaseQuantity('table'); });
+				
+				            
+				function toggleQuantityInput(value) {
+				    if (value === 'place') {
+				 
+				        if (checkboxPlace.checked) {
+				            amountInput.readOnly = true; 
+				            amountInput.value = 1; 
+				            amountTableInput.value = 0; // Set the table amount to 0
+				            checkboxTablePlace.checked = false; // Uncheck the "Par Table" checkbox
+				            amountTableInput.readOnly = true; // Disable the "Par Table" input
+				        } else {
+				            amountInput.readOnly = true; // Disable the "Par Place" input
+				            amountInput.value = 0; // Reset to 0
+				        }
+				    } else if (value === 'table') {
+				        
+				        if (checkboxTablePlace.checked) {
+				            amountTableInput.readOnly = true; 
+				            amountTableInput.value = 1; 
+				            amountInput.value = 0;
+				            checkboxPlace.checked = false;
+				            amountInput.readOnly = true;
+				        } else {
+				            amountTableInput.readOnly = true;
+				            amountTableInput.value = 0; 
+				        }
+				    }
+				
+				    updatePrice(); 
+				}
 
-	function enableButton() {
-		var contactUsButton = document.getElementById("submit-button");
-		contactUsButton.disabled = false;
-	      }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const amountInput = document.getElementById('usj_ticket_quantity');
-            const emailInput = document.getElementById('usj_ticket_email');
-            const phoneInput = document.getElementById('usj_ticket_phoneNumber');
-            const submitButton = document.getElementById('submit-button');
-            const totalPriceElement = document.getElementById('total-price');
-            const emailError = document.getElementById('email-error');
-            const phoneError = document.getElementById('phone-error');
-            const increaseButton = document.getElementById('increase-btn');
-            const decreaseButton = document.getElementById('decrease-btn');
-            const pricePerUnit = 250;
-
-
-
-            function updatePrice() {
-                const amount = parseInt(amountInput.value, 10) || 1;
-                const totalPrice = amount * pricePerUnit;
-                totalPriceElement.textContent = `$${totalPrice}`;
-            }
-            
-   
-
-            function increaseQuantity() {
-                let currentValue = parseInt(amountInput.value);
-                if (!isNaN(currentValue)) {
-                    amountInput.value = currentValue + 1;
-                    updatePrice();
-                }
-            }
-
-            function decreaseQuantity() {
-                let currentValue = parseInt(amountInput.value);
-                if (!isNaN(currentValue) && currentValue > 1) {
-                    amountInput.value = currentValue - 1;
-                    updatePrice();
-                }
-            }
-
-            increaseButton.addEventListener('click', increaseQuantity);
-            decreaseButton.addEventListener('click', decreaseQuantity);
-
-
-            function validateForm() {
-                let isValid = true;
-
-                if (emailInput.value.trim() === '') {
-                    emailError.textContent = "L'adresse e-mail est requise";
-                    emailError.style.color = 'red';
-                    isValid = false;
-                } else {
-                    emailError.textContent = ''; 
-                }
-
-             if (phoneInput.value.trim() === '') {
-                      phoneError.textContent = 'Le numéro de téléphone est requis';
-                     phoneError.style.color = 'red';
-                 isValid = false;
-               } else if (phoneInput.value.trim().length < 7 || phoneInput.value.trim().length > 8) {
-                   phoneError.textContent = 'Le numéro de téléphone doit être composé de 7 ou 8 chiffres';
-                   phoneError.style.color = 'red';
-                   isValid = false;
-            } else {
-                 phoneError.textContent = '';
-                   }
-
-
-                return isValid;
-            }
-
-
-            submitButton.addEventListener('click', function(event) {
-                if (!validateForm()) {
-                    event.preventDefault(); 
-                }
-            });
-            updatePrice();
-        });
-    </script>
+				            function validateForm() {
+				                let isValid = true;
+				
+				                if (emailInput.value.trim() === '') {
+				                    emailError.textContent = "L'adresse e-mail est requise";
+				                    emailError.style.color = 'red';
+				                    isValid = false;
+				                } else {
+				                    emailError.textContent = ''; 
+				                }
+				
+				             if (phoneInput.value.trim() === '') {
+				                      phoneError.textContent = 'Le numéro de téléphone est requis';
+				                     phoneError.style.color = 'red';
+				                 isValid = false;
+				               } else if (phoneInput.value.trim().length < 7 || phoneInput.value.trim().length > 8) {
+				                   phoneError.textContent = 'Le numéro de téléphone doit être composé de 7 ou 8 chiffres';
+				                   phoneError.style.color = 'red';
+				                   isValid = false;
+				            } else {
+				                 phoneError.textContent = '';
+				                   }
+				
+				
+				                return isValid;
+				            }
+				
+				
+				            submitButton.addEventListener('click', function(event) {
+				                if (!validateForm()) {
+				                    event.preventDefault(); 
+				                }
+				            });
+				                  checkboxPlace.addEventListener('change', function() { toggleQuantityInput('place')});
+				                  checkboxTablePlace.addEventListener('change', function() { toggleQuantityInput('table')});
+				                 
+				
+				
+				      toggleQuantityInput(); 
+				            updatePrice();
+				        });
+				    </script>
 {% endblock %}

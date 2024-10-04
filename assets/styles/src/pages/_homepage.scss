@@ -1,4 +1,9 @@
 .Usjticket {
+  .disabled {
+    opacity: 0.5; /* Make the div look disabled */
+    pointer-events: none; /* Disable mouse events */
+}
+
   .top-section-usj-ticket {
     .banner_section {
       background-image: url("/assets/images/usjticket/bluesky.png");
@@ -14,7 +19,9 @@
       width: 100%;
       object-fit: contain;
       padding-left: 15px;
-
+      .top-mid {
+        margin-top: -3rem !important;
+      }
       .row-hot-reser {
         display: flex;
         justify-content: end;
@@ -212,6 +219,13 @@
     padding: 6rem;
     box-sizing: border-box;
 
+  
+  
+  
+    background-image: url('./../../../images/usjticket/backgroundmidsection.png'); // Adjust the path as needed
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     .reserveyourplace {
       border-radius: 16px;
       background-color: rgba(217, 255, 253, 0.62);
@@ -271,7 +285,7 @@
             width: 100px;
             text-align: center;
             padding: 5px;
-            border: 1px solid #1196ca;
+            border: 1px solid #EDF2F7;
           }
 
           .quantity-buttons {
@@ -346,6 +360,20 @@
       .pricetotalquantityinput {
         display: flex;
         flex-direction: column;
+        // input[type="checkbox"] {
+        //   width: 16px;
+        //   height: 16px;
+         
+        //   background-color: white;
+        //   border: 2px solid #e7ecf2; /* Custom border color */
+        //   cursor: pointer;
+        // }
+      
+        // input[type="checkbox"]:checked {
+        //   background-color: white;
+        //   border-color: #3182ce; /* Change border color when checked */
+        // }
+      
         .ninesixone{
           display: flex;
           justify-content: center;
@@ -500,6 +528,9 @@
   }
 
   @media screen and (max-width: 767.98px) {
+    .solution-common .reserveyourplace .pricetotalquantityinput{
+      padding-top: 20px;
+    }
     .information-usj {
       text-align: center;
 
@@ -658,6 +689,7 @@
     }
   }
   @media screen and (min-width: 1120px) {
+
     .top-section-usj-ticket .information-usj .top .top-mid .FrameBackground {
       margin-left: -10%;
     }
@@ -670,12 +702,15 @@
 
   }
   @media screen and (max-width: 1170px) {
+    .top-section-usj-ticket .information-usj .top .top-mid {
+      margin-top: 3rem !important;
+    }
     .top-section-usj-ticket .information-usj .top .logotopsection2{
       margin-left: 3% !important;
-      width: 210px !important;
+      width: 400px !important;
     }
     .top-section-usj-ticket .information-usj .top .logotopsection{
-    width: 210px !important;
+    width: 400px !important;
     }
   }
   @media screen and (max-width: 900px) {

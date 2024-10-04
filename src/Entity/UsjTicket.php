@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="usjTicket")
+ * @ORM\Table(name="usjTicketTable")
  */
 class UsjTicket
 {
@@ -18,9 +18,16 @@ class UsjTicket
 	private $id;
 
 	/**
-	 * @ORM\Column(name="quantity")
+	 * @ORM\Column(name="quantity", type="integer", nullable=true)
 	 */
 	private $quantity;
+
+	/**
+	 * @ORM\Column(name="quantitytable", type="integer", nullable=true)
+	 */
+	private $quantitytable;
+
+
 
 	/**
 	 * @ORM\Column(name="email")
@@ -52,6 +59,17 @@ class UsjTicket
 	public function setQuantity($quantity)
 	{
 		$this->quantity = $quantity;
+		return $this;
+	}
+
+	public function getQuantityTable()
+	{
+		return $this->quantitytable;
+	}
+
+	public function setQuantityTable($quantitytable)
+	{
+		$this->quantitytable = $quantitytable;
 		return $this;
 	}
 

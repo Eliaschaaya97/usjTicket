@@ -57,19 +57,25 @@ class IndexController extends AbstractController
 		$popup = false;
 		$error = null;
 
+
 		if ($form->isSubmitted() && $form->isValid()) {
 			$data = $form->getData();
 
 			$recaptchaResponse = $request->request->get('g-recaptcha-response');
 			$recaptcha = new ReCaptcha($_ENV['SECRET_KEY']);
 			$recaptchaResult = $recaptcha->verify($recaptchaResponse);
+
 			if ($recaptchaResult->isSuccess()) {
 				// dd('recaptcha success');
 				$newTicket = new UsjTicket();
 				$newTicket->setEmail($data->getEmail());
 				$newTicket->setPhoneNumber($data->getPhoneNumber());
 				$newTicket->setQuantity($data->getQuantity());
-				$newTicket->setTotalPrice($data->getQuantity() * 250);
+				$newTicket->setQuantityTable($data->getQuantityTable());
+
+				$totalPrice = ($data->getQuantity() * 250) + ($data->getQuantityTable() * 2500);
+				$newTicket->setTotalPrice($totalPrice);
+
 				$phoneNumber = (string)$data->getPhoneNumber();
 
 				if (strpos($phoneNumber, '9') !== 0) {
@@ -81,17 +87,18 @@ class IndexController extends AbstractController
 				$body = [
 					"currencyID" => 1,
 					"mobileNo" => "$phoneNumber",
-					"amount" => ($data->getQuantity() * 250),
+					"amount" => ($data->getQuantity() * 250) + ($data->getQuantityTable() * 2500),
 					"merchantID" => $this->SUYOOL_MERCHANT,
 					"secureHash" => $secureHash
 				];
 
 				try {
+					
 					$this->usjTicketEntity->persist($newTicket);
 					$this->usjTicketEntity->flush();
 
 					$error = "Le form a été soumis avec succès";
-
+					
 
 					$response = $this->client->request(
 						'POST',
@@ -105,7 +112,6 @@ class IndexController extends AbstractController
 					$content = $response->getContent();
 
 					$content = $response->toArray();
-
 
 					$pushlog = new Log();
 					$pushlog->setidentifier("USJTicket");

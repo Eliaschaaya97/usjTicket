@@ -19,15 +19,25 @@ class UsjTicketType extends AbstractType
 			->add('quantity', IntegerType::class, [
 				'required' => true,
 				'attr' => [
-					'min' => 1,
+					'min' => 0,
 					'step' => 1,
 					'id' => 'amount-input',
 					'placeholder' => 'Enter quantity',
 				],
 				'data' => 1,
-				'constraints' => [
-					new Positive(['message' => 'The amount must be a positive number.']),
+			
+			])
+			->add('quantitytable', IntegerType::class, [
+				'required' => true,
+				'attr' => [
+					'min' => 0,
+					'step' => 1,
+					'id' => 'amount-table-input',
+					'placeholder' => 'Enter table quantity',
 				],
+				'data' =>0 ,
+			
+
 			])
 			->add('email', EmailType::class, [
 				'required' => true,
